@@ -3,13 +3,13 @@
 <div align="center">
   <br>
   <p>📌 Dart / Golang</p>
-  🎉 My <a href="https://blog.lolli.tech">blog</a>
+  🧐 My <a href="https://blog.lpkt.cn">blog</a>
   <br>
-  🧐 Service <a href="https://up.lolli.tech">status</a>
+  🗂️ All <a href="https://cdn.lpkt.cn">resource</a>
   <br>
-  📧 Telegram <a href="https://t.me/lpktc">channel</a>
+  ✉️  <a href="https://t.me/lpktg">Telegram</a> / <a href="https://discord.gg/SsVNbRhK7w">Discord</a>
   <br>
-  🧧 Donate <a href="https://cdn.lpkt.cn/donate/">Ko-fi / 支付宝</a>
+  🎁 Donate <a href="https://cdn.lpkt.cn/donate/">Ko-fi / 支付宝</a>
 </div>
 
 <br clear="right">
