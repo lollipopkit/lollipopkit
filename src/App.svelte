@@ -15,7 +15,8 @@
   } from './lib/filters.js'
 
   const github = 'https://github.com/lollipopkit'
-  const blog = 'https://blog.lpkt.cn'
+  const blog = 'https://blog.lollipopkit.com'
+  const cdn = 'https://cdn.lollipopkit.com'
   // Uptimer; its source is private, so only the site is linked.
   const status = 'https://up.lolli.tech'
 
@@ -285,6 +286,7 @@
         <a href={github}>GitHub</a>
         <a href={blog}>{$LL.footer.blog()}</a>
         <a href={status}>{$LL.footer.status()}</a>
+        <a href={cdn}>CDN</a>
       </div>
     </footer>
   </main>

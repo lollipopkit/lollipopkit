@@ -97,8 +97,9 @@ someone else's.
 
 ### Links kept from the current root page
 
-The footer links GitHub (https://github.com/lollipopkit), the blog (https://blog.lpkt.cn) and
-the status page (https://up.lolli.tech, Uptimer; its source is private). ORMC is a Tools
+The footer links GitHub (https://github.com/lollipopkit), the blog
+(https://blog.lollipopkit.com), the status page (https://up.lolli.tech, Uptimer; its source
+is private) and the CDN (https://cdn.lollipopkit.com, the old root page with the downloads). ORMC is a Tools
 card. The owner chose not to link the LGBT+ Avatar Gen (https://tsag.lpkt.cn) or JWT
 (https://jwt.lpkt.cn) sites that the current root page lists.
 
@@ -122,6 +123,9 @@ Deployed like the MMetrics site: Cloudflare Pages project `lollipopkit-com`
 (<https://lollipopkit-com.pages.dev>), connected to `lollipopkit/lollipopkit-com`, production
 branch `main`, `npm run build` → `dist`, build image v3 with build caching; every other
 branch gets a preview at `<branch>.lollipopkit-com.pages.dev`. Custom domain: `lollipopkit.com`.
+`www.lollipopkit.com` is a proxied CNAME that a zone Redirect Rule sends to
+`https://lollipopkit.com` (301, path and query kept); it is not a Pages domain, since the
+rule answers first and Pages' HTTP validation of it could never pass.
 Cloudflare credentials are keychain generic passwords `cloudflare-account-id` and
 `cloudflare-api-token`; pass them through env vars, never print them.
 
