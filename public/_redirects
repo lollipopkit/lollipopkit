@@ -1,0 +1,8 @@
+# Download paths the old lollipopkit.com root (nginx behind cdn.lolli.tech) served.
+# The same files are on cdn.lollipopkit.com, so the old URLs keep working.
+/serverbox    https://cdn.lollipopkit.com/serverbox          301
+/serverbox/*  https://cdn.lollipopkit.com/serverbox/:splat  301
+/gptbox       https://cdn.lollipopkit.com/gptbox             301
+/gptbox/*     https://cdn.lollipopkit.com/gptbox/:splat     301
+/donate       https://cdn.lollipopkit.com/donate             301
+/donate/*     https://cdn.lollipopkit.com/donate/:splat     301

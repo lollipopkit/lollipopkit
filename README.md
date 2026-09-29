@@ -6,8 +6,8 @@ links out to each project's own site, repo and downloads.
 Status: the page lists apps, tools and libraries (`src/lib/projects.js`), filterable by
 programming language and license and sortable by name (`src/lib/filters.js`; the state is
 kept in the `language` / `license` / `sort` query parameters). Sorting by stars or last
-update was left out on purpose: it would need a GitHub API call at build time. Still to do:
-the kept links and downloads below, and deployment. This README is the brief.
+update was left out on purpose: it would need a GitHub API call at build time. Live at
+`lollipopkit.com` (Cloudflare Pages, see below). This README is the brief.
 
 ## Decisions
 
@@ -102,8 +102,7 @@ the status page (https://up.lolli.tech, Uptimer; its source is private). ORMC is
 card. The owner chose not to link the LGBT+ Avatar Gen (https://tsag.lpkt.cn) or JWT
 (https://jwt.lpkt.cn) sites that the current root page lists.
 
-Still to do: the downloads, Server Box `/serverbox`, GPT Box `/gptbox`, Donate `/donate`
-(see below).
+The old download paths, `/serverbox`, `/gptbox`, `/donate`, redirect to the CDN (see below).
 
 To confirm with the owner before listing: `ipgeo.lollipopkit.com` (the ipgeo-shards data,
 Pages project `ipgeo-shards`), `sbmd.lollipopkit.com` (the ServerBox Monitor web panel,
@@ -113,23 +112,16 @@ Pages project `sbmd`, built from `flutter_server_box/monitor/frontend`).
 
 Target: `lollipopkit.com` (root).
 
-**Constraint — do not switch DNS until this is solved.** The root currently is a
-proxied CNAME to `cdn.lolli.tech`, an nginx server that also serves `/serverbox/`,
-`/gptbox/` and `/donate/` (download files). Pointing the root at Cloudflare Pages
-drops those paths. The apps' source does not reference `lollipopkit.com/...`, but
-external links and existing users may. Options:
-
-1. A Pages Function under `functions/{serverbox,gptbox,donate}/` that proxies to the
-   origin, keeping the URLs unchanged (needs an origin hostname that does not loop back
-   through `lollipopkit.com`).
-2. Move the downloads to a dedicated host (e.g. `cdn.lpkt.cn`) and redirect the old
-   paths with `_redirects`.
+The root used to be a proxied CNAME to `cdn.lolli.tech`, an nginx server that also served
+`/serverbox/`, `/gptbox/` and `/donate/` (download files). Those files are also on
+`cdn.lollipopkit.com`, so `public/_redirects` sends the old paths there with a 301. The
+old root page linked nothing else under `lollipopkit.com`, and no local repo references
+a bare `lollipopkit.com/<path>`.
 
 Deployed like the MMetrics site: Cloudflare Pages project `lollipopkit-com`
 (<https://lollipopkit-com.pages.dev>), connected to `lollipopkit/lollipopkit-com`, production
 branch `main`, `npm run build` → `dist`, build image v3 with build caching; every other
-branch gets a preview at `<branch>.lollipopkit-com.pages.dev`. No custom domain is attached
-yet; see the constraint above.
+branch gets a preview at `<branch>.lollipopkit-com.pages.dev`. Custom domain: `lollipopkit.com`.
 Cloudflare credentials are keychain generic passwords `cloudflare-account-id` and
 `cloudflare-api-token`; pass them through env vars, never print them.
 
