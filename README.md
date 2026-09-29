@@ -3,7 +3,11 @@
 Home page for lollipopkit's projects: one place that introduces the apps and tools and
 links out to each project's own site, repo and downloads.
 
-Status: not started. This README is the brief.
+Status: the page lists apps, tools and libraries (`src/lib/projects.js`), filterable by
+programming language and license and sortable by name (`src/lib/filters.js`; the state is
+kept in the `language` / `license` / `sort` query parameters). Sorting by stars or last
+update was left out on purpose: it would need a GitHub API call at build time. Still to do:
+the kept links and downloads below, and deployment. This README is the brief.
 
 ## Decisions
 
@@ -35,37 +39,75 @@ Status: not started. This README is the brief.
 | Project | Repo | Site | What it is |
 |---------|------|------|------------|
 | ServerBox | [flutter_server_box](https://github.com/lollipopkit/flutter_server_box) | [serverbox.lollipopkit.com](https://serverbox.lollipopkit.com) | Server status and toolbox: SSH terminal, SFTP, Docker, processes, systemd, charts. Flutter; iOS, Android, desktop. Flagship. |
-| ServerBox Monitor | [server_box_monitor](https://github.com/lollipopkit/server_box_monitor) | — | Server-side companion for ServerBox. Go. |
+| ServerBox Monitor | [flutter_server_box/monitor](https://github.com/lollipopkit/flutter_server_box/tree/main/monitor) | — | Server-side agent for ServerBox. Rust. The old Go repo `server_box_monitor` is superseded. |
 | GPTBox | [flutter_gpt_box](https://github.com/lollipopkit/flutter_gpt_box) | — | Third-party client for the OpenAI API. Flutter. |
 | MMetrics | [MMetrics](https://github.com/lollipopkit/MMetrics) | [mmetrics.lollipopkit.com](https://mmetrics.lollipopkit.com) | Apple Silicon system monitor for the menu bar. Swift, macOS. |
 | MFuse | [mfuse](https://github.com/lollipopkit/mfuse) | [mfuse.lollipopkit.com](https://mfuse.lollipopkit.com) | Mount SFTP, S3, WebDAV, SMB, FTP, NFS, Google Drive in Finder via File Provider. Swift, macOS. |
 | lk | [lk](https://github.com/lollipopkit/lk) | [lang.lollipopkit.com](https://lang.lollipopkit.com) | A lightweight programming language written in Rust. |
 | ORMC | [or-models-compare](https://github.com/lollipopkit/or-models-compare) | [ormc.lollipopkit.com](https://ormc.lollipopkit.com) | OpenRouter models, updated daily, with price and context comparison. |
-| shtg | [shtg](https://github.com/lollipopkit/shtg) | — | Tidy and sync zsh / fish history. Go. |
 | exedev-cli | [exedev-cli](https://github.com/lollipopkit/exedev-cli) | — | Unofficial CLI for exe.dev. Rust. |
 | sysinfo-api-mcp | [sysinfo-api-mcp](https://github.com/lollipopkit/sysinfo-api-mcp) | — | System information API / MCP server. Rust. |
-| cc-plugins | [cc-plugins](https://github.com/lollipopkit/cc-plugins) | — | Claude Code plugins. |
+| Liquid Glass | [liquid-glass](https://github.com/lollipopkit/liquid-glass) | [liquid-glass.lollipopkit.com](https://liquid-glass.lollipopkit.com) | Liquid glass / refraction effects for React, Svelte, Vue. |
+
+On the page, ServerBox, MMetrics, MFuse and GPTBox are **Apps** (cards with icons); the
+rest are **Tools** (compact cards, no icon — none of those repos has one).
+
+`src/lib/projects.js` also lists other public, non-archived repos that are usable tools or
+libraries. Forks count only when published under their own name (pub.dev publisher
+`lpkt.cn`, crates.io / npm user `lollipopkit`): `gh repo list --source` misses them, so check
+the registries too. Left out on purpose:
+
+- Removed by the owner: cc-plugins, shtg, flounder, fl_codepush_box, polyglot-ci,
+  ai_merge_action, app_dist, nano-db, gcwd, sophon-bm1688-debian, riverpod_reg,
+  example_gen, apple_machine_ids.dart, mcp.dart, boa.dart, lru.dart, async_queue.dart,
+  dash_lru.rs, gqcl, nano-db-sdk-go, go-lru-cacher, go-var-listener, gommon.
+- Data repos that only feed ServerBox (`shellbox-rootfs`, `ipgeo-shards`),
+  `trailbase.skill` (included in `agent-skills`), `gu` (no README), and config repos
+  (`dotfiles`, `nvim-cfg`, homebrew taps, the profile repo).
 
 Each project's icon lives in its repo (e.g. MMetrics: `assets/icon/icon.svg`); copy
-them in rather than hot-linking.
+them in rather than hot-linking, and prefer SVG where the project has one. Copied so far,
+into `src/assets/icons/`:
+
+- ServerBox — `assets/app_icon.png` (artwork only), put on a tile by `scripts/tile-icon.py`
+  with content scale 0.66. Its macOS icon has a plain white tile with no edge, which
+  disappears on a white page.
+- MMetrics — `assets/icon/icon.svg`.
+- GPTBox — `assets/app_icon.png` (artwork only), put on a tile by `scripts/tile-icon.py`
+  with content scale 0.62. Its macOS icon is still the Flutter placeholder.
+- MFuse — the app icon ships without an alpha channel, so `scripts/mfuse-icon.py` cuts
+  it out of `app_icon_512x512@2x.png`. `website/public/favicon.svg` in that repo is the
+  Vite logo; do not use it. Likewise ServerBox's `docs/public/favicon.svg` is the Starlight
+  default.
+
+The site's own icon is `public/favicon.png` (180px, also the `apple-touch-icon`).
+
+Project data (links, tags, accents) is in `src/lib/projects.js`; copy is in
+`src/i18n/<locale>/index.ts`.
 
 ### Libraries (short list)
 
-Dart: fl_lib, image_hash.dart, lru.dart, async_queue.dart, apple_machine_ids.dart,
-riverpod_reg, redfish. Rust: ntex-basicauth, ntex-ratelimiter, qcl.
+Dart: fl_lib, redfish, image_hash, term, fl_magnetic, webdav_client_plus (a fork, published
+under its own name). Rust: ntex-basicauth,
+ntex-ratelimiter, qcl. Go: exa.
+
+A library links to its pub.dev / crates.io page only when that page is this repo's
+package; check the registry's repository field before linking, since short names are often
+someone else's.
 
 ### Links kept from the current root page
 
-The current `lollipopkit.com` page lists these; the new site keeps them:
+The footer links GitHub (https://github.com/lollipopkit), the blog (https://blog.lpkt.cn) and
+the status page (https://up.lolli.tech, Uptimer; its source is private). ORMC is a Tools
+card. The owner chose not to link the LGBT+ Avatar Gen (https://tsag.lpkt.cn) or JWT
+(https://jwt.lpkt.cn) sites that the current root page lists.
 
-- GitHub — https://github.com/lollipopkit
-- Blog — https://blog.lpkt.cn
-- LGBT+ Avatar Gen — https://tsag.lpkt.cn
-- JWT — https://jwt.lpkt.cn
-- OpenRouter Models Comparison — https://ormc.lpkt.cn
-- Downloads: Server Box `/serverbox`, GPT Box `/gptbox`, Donate `/donate` (see below)
+Still to do: the downloads, Server Box `/serverbox`, GPT Box `/gptbox`, Donate `/donate`
+(see below).
 
-To confirm with the owner before listing: `ipgeo.lollipopkit.com`, `sbmd.lollipopkit.com`.
+To confirm with the owner before listing: `ipgeo.lollipopkit.com` (the ipgeo-shards data,
+Pages project `ipgeo-shards`), `sbmd.lollipopkit.com` (the ServerBox Monitor web panel,
+Pages project `sbmd`, built from `flutter_server_box/monitor/frontend`).
 
 ## Domain and deployment
 
@@ -83,8 +125,11 @@ external links and existing users may. Options:
 2. Move the downloads to a dedicated host (e.g. `cdn.lpkt.cn`) and redirect the old
    paths with `_redirects`.
 
-Deploy like the MMetrics site: Cloudflare Pages connected to a GitHub repo (to create:
-`lollipopkit/lollipopkit-com`), production branch `main`, `npm run build` → `dist`.
+Deployed like the MMetrics site: Cloudflare Pages project `lollipopkit-com`
+(<https://lollipopkit-com.pages.dev>), connected to `lollipopkit/lollipopkit-com`, production
+branch `main`, `npm run build` → `dist`, build image v3 with build caching; every other
+branch gets a preview at `<branch>.lollipopkit-com.pages.dev`. No custom domain is attached
+yet; see the constraint above.
 Cloudflare credentials are keychain generic passwords `cloudflare-account-id` and
 `cloudflare-api-token`; pass them through env vars, never print them.
 
@@ -95,3 +140,7 @@ npm install && npm run dev
 npm run check      # tsc against both jsconfig files
 npm run build      # npm ci, check, vite build
 ```
+
+Regenerating `src/i18n/` and checking `.svelte` files both need pinned tools run from
+outside the project; follow `website/README.md` in the MMetrics repo. New keys go into
+`src/i18n/en/index.ts` first.
