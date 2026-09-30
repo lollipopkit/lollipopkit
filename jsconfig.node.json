@@ -1,0 +1,22 @@
+{
+  /**
+   * The build-time configs, checked separately from `jsconfig.json`.
+   *
+   * They need Node's types, and TypeScript applies global declarations to the whole
+   * program: pulling `@types/node` into the app's config would make `process`, `Buffer`
+   * and friends type-check in browser code that cannot use them.
+   */
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["vite.config.js", "svelte.config.js", "scripts/**/*.js"]
+}
