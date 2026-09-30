@@ -3,6 +3,7 @@
   import LL, { setLocale } from './i18n/i18n-svelte'
   import { loadLocale } from './i18n/i18n-util.sync'
   import { getInitialLocale, locales, localeStorageKey, syncLocaleToUrl } from './lib/i18n.js'
+  import { iconUrl } from './lib/icons.js'
   import { apps, libraries, tools } from './lib/projects.js'
   import {
     ALL,
@@ -200,7 +201,7 @@
             style:--accent={app.accent}
           >
             <div class="app-head">
-              <img class="app-icon" src={app.icon} alt="" width="64" height="64" />
+              <img class="app-icon" src={iconUrl(app.icon)} alt="" width="64" height="64" />
               <div>
                 <h3>{app.name}</h3>
                 <p class="app-tagline">{$LL.apps[app.key].tagline()}</p>

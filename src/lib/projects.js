@@ -1,7 +1,4 @@
-import serverboxIcon from '../assets/icons/serverbox.png'
-import mmetricsIcon from '../assets/icons/mmetrics.svg'
-import mfuseIcon from '../assets/icons/mfuse.png'
-import gptboxIcon from '../assets/icons/gptbox.png'
+// Plain data: `scripts/readme.js` imports this file in Node, so no asset imports here.
 
 const gh = 'https://github.com/lollipopkit'
 
@@ -25,8 +22,9 @@ const gh = 'https://github.com/lollipopkit'
  *   accent: string,
  *   featured?: boolean,
  * }} App
- *   `key` is the key under `apps` in the translations. `icon` is SVG when the project has
- *   one, PNG otherwise. `tags` are platforms and frameworks: proper nouns, not translated.
+ *   `key` is the key under `apps` in the translations. `icon` is a file name in
+ *   `src/assets/icons/`: SVG when the project has one, PNG otherwise. `tags` are platforms
+ *   and frameworks: proper nouns, not translated.
  *   `accent` is taken from the project's own icon.
  */
 
@@ -35,7 +33,7 @@ export const apps = [
   {
     key: 'serverbox',
     name: 'ServerBox',
-    icon: serverboxIcon,
+    icon: 'serverbox.png',
     site: 'https://serverbox.lollipopkit.com',
     repo: `${gh}/flutter_server_box`,
     language: 'Dart',
@@ -47,7 +45,7 @@ export const apps = [
   {
     key: 'mmetrics',
     name: 'MMetrics',
-    icon: mmetricsIcon,
+    icon: 'mmetrics.svg',
     site: 'https://mmetrics.lollipopkit.com',
     repo: `${gh}/MMetrics`,
     language: 'Swift',
@@ -58,7 +56,7 @@ export const apps = [
   {
     key: 'mfuse',
     name: 'MFuse',
-    icon: mfuseIcon,
+    icon: 'mfuse.png',
     site: 'https://mfuse.lollipopkit.com',
     repo: `${gh}/mfuse`,
     language: 'Swift',
@@ -69,7 +67,7 @@ export const apps = [
   {
     key: 'gptbox',
     name: 'GPTBox',
-    icon: gptboxIcon,
+    icon: 'gptbox.png',
     repo: `${gh}/flutter_gpt_box`,
     language: 'Dart',
     license: 'GPL-3.0',

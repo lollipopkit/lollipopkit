@@ -16,6 +16,8 @@
     "skipLibCheck": true,
     "checkJs": true,
     "noEmit": true,
+    // scripts/readme.js imports the English copy (`.ts`) directly; Node strips the types.
+    "allowImportingTsExtensions": true,
     "types": ["node"]
   },
   "include": ["vite.config.js", "svelte.config.js", "scripts/**/*.js"]
