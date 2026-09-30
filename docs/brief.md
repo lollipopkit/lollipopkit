@@ -7,7 +7,13 @@ Status: the page lists apps, tools and libraries (`src/lib/projects.js`), filter
 programming language and license and sortable by name (`src/lib/filters.js`; the state is
 kept in the `language` / `license` / `sort` query parameters). Sorting by stars or last
 update was left out on purpose: it would need a GitHub API call at build time. Live at
-`lollipopkit.com` (Cloudflare Pages, see below). This README is the brief.
+`lollipopkit.com` (Cloudflare Pages, see below). This file is the brief.
+
+The repo is also the GitHub profile repo, so the root `README.md` is the profile page.
+Its project list, between the `projects:start` / `projects:end` markers, is generated
+from `src/lib/projects.js` and the English copy by `npm run readme`; `npm run check`
+fails when it is out of date. Keep `src/lib/projects.js` free of asset imports so Node
+can load it. `avatars/` and `logos/` belong to the profile, not the site.
 
 ## Decisions
 
@@ -63,7 +69,7 @@ the registries too. Left out on purpose:
   dash_lru.rs, gqcl, nano-db-sdk-go, go-lru-cacher, go-var-listener, gommon.
 - Data repos that only feed ServerBox (`shellbox-rootfs`, `ipgeo-shards`),
   `trailbase.skill` (included in `agent-skills`), `gu` (no README), and config repos
-  (`dotfiles`, `nvim-cfg`, homebrew taps, the profile repo).
+  (`dotfiles`, `nvim-cfg`, homebrew taps).
 
 Each project's icon lives in its repo (e.g. MMetrics: `assets/icon/icon.svg`); copy
 them in rather than hot-linking, and prefer SVG where the project has one. Copied so far,
@@ -119,10 +125,15 @@ The root used to be a proxied CNAME to `cdn.lolli.tech`, an nginx server that al
 old root page linked nothing else under `lollipopkit.com`, and no local repo references
 a bare `lollipopkit.com/<path>`.
 
-Deployed like the MMetrics site: Cloudflare Pages project `lollipopkit-com`
-(<https://lollipopkit-com.pages.dev>), connected to `lollipopkit/lollipopkit-com`, production
+Deployed like the MMetrics site: Cloudflare Pages project `lollipopkit`
+(<https://lollipopkit.pages.dev>), connected to `lollipopkit/lollipopkit`, production
 branch `main`, `npm run build` → `dist`, build image v3 with build caching; every other
-branch gets a preview at `<branch>.lollipopkit-com.pages.dev`. Custom domain: `lollipopkit.com`.
+branch gets a preview at `<branch>.lollipopkit.pages.dev`. Custom domain: `lollipopkit.com`.
+`.node-version` pins Node 24 for the build: `scripts/readme.js` imports a `.ts` file and
+relies on Node's built-in type stripping.
+A Pages project cannot switch to another repo, so moving from `lollipopkit/lollipopkit-com`
+meant a new project. TODO: delete the old `lollipopkit-com` Pages project once the new one
+serves `lollipopkit.com`.
 `www.lollipopkit.com` is a proxied CNAME that a zone Redirect Rule sends to
 `https://lollipopkit.com` (301, path and query kept); it is not a Pages domain, since the
 rule answers first and Pages' HTTP validation of it could never pass.
@@ -133,7 +144,8 @@ Cloudflare credentials are keychain generic passwords `cloudflare-account-id` an
 
 ```bash
 npm install && npm run dev
-npm run check      # tsc against both jsconfig files
+npm run check      # tsc against both jsconfig files, README project list up to date
+npm run readme     # regenerate the README project list
 npm run build      # npm ci, check, vite build
 ```
 
