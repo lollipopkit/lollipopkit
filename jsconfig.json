@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    /**
+     * svelte-preprocess cannot figure out whether you have
+     * a value or a type, so tell TypeScript to enforce using
+     * `import type` instead of `import` for Types.
+     */
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    /**
+     * To have warnings / errors of the Svelte compiler at the
+     * correct position, enable source maps by default.
+     */
+    "sourceMap": true,
+    "esModuleInterop": true,
+    /**
+     * Relative, and without `baseUrl`: TypeScript 7 removed the option and rejects
+     * non-relative path targets, so the old form made every `tsc` run fail on the
+     * config before it read a single source file.
+     */
+    "paths": {
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"]
+    },
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+    /**
+     * Typecheck JS in `.svelte` and `.js` files by default.
+     * Disable this if you'd like to use dynamic types.
+     */
+    "checkJs": true
+  },
+  /**
+   * Use global.d.ts instead of compilerOptions.types
+   * to avoid limiting type declarations.
+   */
+  /**
+   * `.ts` is listed explicitly: `tsc` cannot parse `.svelte`, so the generated i18n
+   * modules that only `App.svelte` imports were never pulled into the program and an
+   * invalid locale file passed `bun run check` untouched.
+   */
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+}

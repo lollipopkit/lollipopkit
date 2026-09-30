@@ -1,0 +1,27 @@
+{
+  "name": "lollipopkit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "^22.18.0 || >=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "typesafe-i18n": "typesafe-i18n --no-watch",
+    "readme": "node scripts/readme.js",
+    "check": "tsc --noEmit -p jsconfig.json && tsc --noEmit -p jsconfig.node.json && node scripts/readme.js --check",
+    "build": "npm ci && npm run check && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
+    "@types/node": "^26.1.2",
+    "svelte": "^5.56.8",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1"
+  },
+  "dependencies": {
+    "typesafe-i18n": "^5.27.1"
+  }
+}
