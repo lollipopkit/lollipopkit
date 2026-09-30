@@ -131,9 +131,8 @@ branch `main`, `npm run build` → `dist`, build image v3 with build caching; ev
 branch gets a preview at `<branch>.lollipopkit.pages.dev`. Custom domain: `lollipopkit.com`.
 `.node-version` pins Node 24 for the build: `scripts/readme.js` imports a `.ts` file and
 relies on Node's built-in type stripping.
-A Pages project cannot switch to another repo, so moving from `lollipopkit/lollipopkit-com`
-meant a new project. TODO: delete the old `lollipopkit-com` Pages project once the new one
-serves `lollipopkit.com`.
+A Pages project cannot switch to another repo, so the move from the archived
+`lollipopkit/lollipopkit-com` created this project; the old `lollipopkit-com` project is deleted.
 `www.lollipopkit.com` is a proxied CNAME that a zone Redirect Rule sends to
 `https://lollipopkit.com` (301, path and query kept); it is not a Pages domain, since the
 rule answers first and Pages' HTTP validation of it could never pass.
