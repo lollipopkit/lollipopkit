@@ -3,16 +3,16 @@
 Home page for lollipopkit's projects: one place that introduces the apps and tools and
 links out to each project's own site, repo and downloads.
 
-Status: the page lists apps, tools and libraries (`src/lib/projects.js`), filterable by
-programming language and license and sortable by name (`src/lib/filters.js`; the state is
+Status: the page lists apps, tools and libraries (`src/lib/projects.ts`), filterable by
+programming language and license and sortable by name (`src/lib/filters.ts`; the state is
 kept in the `language` / `license` / `sort` query parameters). Sorting by stars or last
 update was left out on purpose: it would need a GitHub API call at build time. Live at
 `lollipopkit.com` (Cloudflare Pages, see below). This file is the brief.
 
 The repo is also the GitHub profile repo, so the root `README.md` is the profile page.
 Its project list, between the `projects:start` / `projects:end` markers, is generated
-from `src/lib/projects.js` and the English copy by `npm run readme`; `npm run check`
-fails when it is out of date. Keep `src/lib/projects.js` free of asset imports so Node
+from `src/lib/projects.ts` and the English copy by `npm run readme`; `npm run check`
+fails when it is out of date. Keep `src/lib/projects.ts` free of asset imports so Node
 can load it. `avatars/` and `logos/` belong to the profile, not the site.
 
 ## Decisions
@@ -46,19 +46,18 @@ can load it. `avatars/` and `logos/` belong to the profile, not the site.
 |---------|------|------|------------|
 | ServerBox | [flutter_server_box](https://github.com/lollipopkit/flutter_server_box) | [serverbox.lollipopkit.com](https://serverbox.lollipopkit.com) | Server status and toolbox: SSH terminal, SFTP, Docker, processes, systemd, charts. Flutter; iOS, Android, desktop. Flagship. |
 | ServerBox Monitor | [flutter_server_box/monitor](https://github.com/lollipopkit/flutter_server_box/tree/main/monitor) | — | Server-side agent for ServerBox. Rust. The old Go repo `server_box_monitor` is superseded. |
-| GPTBox | [flutter_gpt_box](https://github.com/lollipopkit/flutter_gpt_box) | — | Third-party client for the OpenAI API. Flutter. |
+| LLMBox | [flutter_gpt_box](https://github.com/lollipopkit/flutter_gpt_box) | — | Third-party client for the Anthropic/OpenAI/Gemini API. Flutter. Formerly GPTBox. |
 | MMetrics | [MMetrics](https://github.com/lollipopkit/MMetrics) | [mmetrics.lollipopkit.com](https://mmetrics.lollipopkit.com) | Apple Silicon system monitor for the menu bar. Swift, macOS. |
 | MFuse | [mfuse](https://github.com/lollipopkit/mfuse) | [mfuse.lollipopkit.com](https://mfuse.lollipopkit.com) | Mount SFTP, S3, WebDAV, SMB, FTP, NFS, Google Drive in Finder via File Provider. Swift, macOS. |
 | lk | [lk](https://github.com/lollipopkit/lk) | [lang.lollipopkit.com](https://lang.lollipopkit.com) | A lightweight programming language written in Rust. |
 | ORMC | [or-models-compare](https://github.com/lollipopkit/or-models-compare) | [ormc.lollipopkit.com](https://ormc.lollipopkit.com) | OpenRouter models, updated daily, with price and context comparison. |
 | exedev-cli | [exedev-cli](https://github.com/lollipopkit/exedev-cli) | — | Unofficial CLI for exe.dev. Rust. |
-| sysinfo-api-mcp | [sysinfo-api-mcp](https://github.com/lollipopkit/sysinfo-api-mcp) | — | System information API / MCP server. Rust. |
 | Liquid Glass | [liquid-glass](https://github.com/lollipopkit/liquid-glass) | [liquid-glass.lollipopkit.com](https://liquid-glass.lollipopkit.com) | Liquid glass / refraction effects for React, Svelte, Vue. |
 
-On the page, ServerBox, MMetrics, MFuse and GPTBox are **Apps** (cards with icons); the
+On the page, ServerBox, MMetrics, MFuse and LLMBox are **Apps** (cards with icons); the
 rest are **Tools** (compact cards, no icon — none of those repos has one).
 
-`src/lib/projects.js` also lists other public, non-archived repos that are usable tools or
+`src/lib/projects.ts` also lists other public, non-archived repos that are usable tools or
 libraries. Forks count only when published under their own name (pub.dev publisher
 `lpkt.cn`, crates.io / npm user `lollipopkit`): `gh repo list --source` misses them, so check
 the registries too. Left out on purpose:
@@ -66,7 +65,9 @@ the registries too. Left out on purpose:
 - Removed by the owner: cc-plugins, shtg, flounder, fl_codepush_box, polyglot-ci,
   ai_merge_action, app_dist, nano-db, gcwd, sophon-bm1688-debian, riverpod_reg,
   example_gen, apple_machine_ids.dart, mcp.dart, boa.dart, lru.dart, async_queue.dart,
-  dash_lru.rs, gqcl, nano-db-sdk-go, go-lru-cacher, go-var-listener, gommon.
+  dash_lru.rs, gqcl, nano-db-sdk-go, go-lru-cacher, go-var-listener, gommon,
+  sysinfo-api-mcp, icons_finder, code_prompt.rs, fl_build, fvck_adb_mDNS,
+  Gogs-auto-night-theme, gitea-custom, color-inverter, miwifi_auto_get_real_public_ip.
 - Data repos that only feed ServerBox (`shellbox-rootfs`, `ipgeo-shards`),
   `trailbase.skill` (included in `agent-skills`), `gu` (no README), and config repos
   (`dotfiles`, `nvim-cfg`, homebrew taps).
@@ -88,7 +89,7 @@ into `src/assets/icons/`:
 
 The site's own icon is `public/favicon.png` (180px, also the `apple-touch-icon`).
 
-Project data (links, tags, accents) is in `src/lib/projects.js`; copy is in
+Project data (links, tags, accents) is in `src/lib/projects.ts`; copy is in
 `src/i18n/<locale>/index.ts`.
 
 ### Libraries (short list)
@@ -129,8 +130,8 @@ Deployed like the MMetrics site: Cloudflare Pages project `lollipopkit`
 (<https://lollipopkit.pages.dev>), connected to `lollipopkit/lollipopkit`, production
 branch `main`, `npm run build` → `dist`, build image v3 with build caching; every other
 branch gets a preview at `<branch>.lollipopkit.pages.dev`. Custom domain: `lollipopkit.com`.
-`.node-version` pins Node 24 for the build: `scripts/readme.js` imports a `.ts` file and
-relies on Node's built-in type stripping.
+`.node-version` pins Node 24 for the build: `npm run readme` / `check` run
+`scripts/readme.ts` with Node's built-in type stripping.
 A Pages project cannot switch to another repo, so the move from the archived
 `lollipopkit/lollipopkit-com` created this project; the old `lollipopkit-com` project is deleted.
 `www.lollipopkit.com` is a proxied CNAME that a zone Redirect Rule sends to
@@ -143,7 +144,7 @@ Cloudflare credentials are keychain generic passwords `cloudflare-account-id` an
 
 ```bash
 npm install && npm run dev
-npm run check      # tsc against both jsconfig files, README project list up to date
+npm run check      # tsc against both tsconfig files, README project list up to date
 npm run readme     # regenerate the README project list
 npm run build      # npm ci, check, vite build
 ```

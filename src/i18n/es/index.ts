@@ -54,8 +54,8 @@ const es: Translation = {
       description:
         'Monta SFTP, S3, WebDAV, SMB, FTP, NFS, Google Drive, Dropbox y OneDrive mediante File Provider.',
     },
-    gptbox: {
-      tagline: 'Cliente de terceros para la API de OpenAI.',
+    llmbox: {
+      tagline: 'Cliente de terceros para la API de Anthropic/OpenAI/Gemini.',
       description:
         'Chat de texto, imagen y audio, con sincronización por WebDAV o iCloud e importación de exportaciones de ChatGPT. Aún en desarrollo.',
     },
@@ -68,20 +68,11 @@ const es: Translation = {
     ormc: 'Modelos de OpenRouter, actualizados a diario, con comparación de precio y contexto.',
     liquidGlass: 'Efectos de vidrio líquido y refracción para React, Svelte y Vue.',
     exedevCli: 'CLI no oficial para exe.dev.',
-    sysinfoMcp: 'Información del sistema mediante una API REST y un servidor MCP.',
-    iconsFinder: 'Galería del paquete de Flutter icons_plus.',
     agentSkills: 'Skills de agente para TrailBase, traspasos, documentos enlazados y más.',
     piModelsMetadata: 'Extensión de Pi que lista los modelos de un proveedor y añade metadatos de OpenRouter.',
     piTabFollowUp: 'Extensión de Pi para enviar mensajes de seguimiento con Tab.',
     piUiFinetune: 'Extensión de Pi que acorta la vista contraída de resultados de herramientas extensos.',
-    codePrompt: 'CLI que reúne archivos de código en uno solo para prompts de IA, documentación o compartir.',
-    flBuild: 'Script de compilación para proyectos Flutter, configurado en pubspec.yaml.',
     utilsFish: 'Utilidades para fish shell: archivos comprimidos y administración del sistema.',
-    adbMdns: 'Conecta dispositivos Android por adb Wi-Fi cuando mDNS los descubre pero la conexión automática falla.',
-    gogsTheme: 'Modo oscuro automático para Gogs.',
-    giteaCustom: 'Estilos personalizados para Gitea.',
-    colorInverter: 'Invierte colores en formato hex, rgb o rgba.',
-    miwifi: 'Obtiene la IP pública de un router Mi WiFi para exponer servicios de la intranet.',
   },
   libraries: {
     title: 'Bibliotecas',

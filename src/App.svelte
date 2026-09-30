@@ -1,10 +1,17 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte'
   import LL, { setLocale } from './i18n/i18n-svelte'
   import { loadLocale } from './i18n/i18n-util.sync'
-  import { getInitialLocale, locales, localeStorageKey, syncLocaleToUrl } from './lib/i18n.js'
-  import { iconUrl } from './lib/icons.js'
-  import { apps, libraries, tools } from './lib/projects.js'
+  import type { Locales } from './i18n/i18n-types'
+  import {
+    getInitialLocale,
+    locales,
+    localeStorageKey,
+    normalizeLocale,
+    syncLocaleToUrl,
+  } from './lib/i18n'
+  import { iconUrl } from './lib/icons'
+  import { apps, libraries, tools } from './lib/projects'
   import {
     ALL,
     NO_LICENSE,
@@ -13,7 +20,8 @@
     optionsOf,
     readFilters,
     syncFiltersToUrl,
-  } from './lib/filters.js'
+    type Filters,
+  } from './lib/filters'
 
   const github = 'https://github.com/lollipopkit'
   const blog = 'https://blog.lollipopkit.com'
@@ -36,7 +44,7 @@
   const licenses = optionsOf(listed, 'license')
   const libraryLanguages = optionsOf(libraries, 'language')
 
-  let filters = $state(
+  let filters = $state<Filters>(
     typeof window === 'undefined'
       ? { ...defaultFilters }
       : readFilters(window.location.search, { languages, licenses }),
@@ -59,13 +67,12 @@
     visibleApps.length === 0 && visibleTools.length === 0 && libraryGroups.length === 0,
   )
 
-  /** @param {Partial<typeof filters>} next */
-  function updateFilters(next) {
+  function updateFilters(next: Partial<Filters>) {
     Object.assign(filters, next)
     syncFiltersToUrl(filters)
   }
 
-  function applyLocale(nextLocale) {
+  function applyLocale(nextLocale: Locales) {
     locale = nextLocale
     loadLocale(nextLocale)
     setLocale(nextLocale)
@@ -93,8 +100,8 @@
       ?.setAttribute('content', $LL.meta.description())
   })
 
-  function handleLocaleChange(event) {
-    const nextLocale = event.currentTarget.value
+  function handleLocaleChange(event: Event & { currentTarget: HTMLSelectElement }) {
+    const nextLocale = normalizeLocale(event.currentTarget.value)
     applyLocale(nextLocale)
     syncLocaleToUrl(nextLocale)
   }

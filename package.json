@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "vite",
     "typesafe-i18n": "typesafe-i18n --no-watch",
-    "readme": "node scripts/readme.js",
-    "check": "tsc --noEmit -p jsconfig.json && tsc --noEmit -p jsconfig.node.json && node scripts/readme.js --check",
+    "readme": "node scripts/readme.ts",
+    "check": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && node scripts/readme.ts --check",
     "build": "npm ci && npm run check && vite build",
     "preview": "vite preview"
   },

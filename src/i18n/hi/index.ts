@@ -54,8 +54,8 @@ const hi: Translation = {
       description:
         'File Provider के ज़रिए SFTP, S3, WebDAV, SMB, FTP, NFS, Google Drive, Dropbox और OneDrive माउंट करता है।',
     },
-    gptbox: {
-      tagline: 'OpenAI API के लिए थर्ड-पार्टी क्लाइंट।',
+    llmbox: {
+      tagline: 'Anthropic/OpenAI/Gemini API के लिए थर्ड-पार्टी क्लाइंट।',
       description:
         'टेक्स्ट, इमेज और ऑडियो चैट, WebDAV या iCloud से सिंक, और ChatGPT एक्सपोर्ट से इम्पोर्ट। अभी विकास में है।',
     },
@@ -68,20 +68,11 @@ const hi: Translation = {
     ormc: 'OpenRouter मॉडल, रोज़ अपडेट, कीमत और कॉन्टेक्स्ट की तुलना के साथ।',
     liquidGlass: 'React, Svelte और Vue के लिए लिक्विड ग्लास और रिफ़्रैक्शन इफ़ेक्ट।',
     exedevCli: 'exe.dev के लिए अनौपचारिक CLI।',
-    sysinfoMcp: 'REST API और MCP सर्वर के ज़रिए सिस्टम जानकारी।',
-    iconsFinder: 'Flutter पैकेज icons_plus की गैलरी।',
     agentSkills: 'TrailBase, हैंडऑफ़, लिंक्ड डॉक्स आदि के लिए एजेंट स्किल्स।',
     piModelsMetadata: 'Pi एक्सटेंशन जो किसी प्रोवाइडर के मॉडल सूचीबद्ध करता है और OpenRouter मेटाडेटा जोड़ता है।',
     piTabFollowUp: 'Tab से फ़ॉलो-अप संदेश भेजने के लिए Pi एक्सटेंशन।',
     piUiFinetune: 'Pi एक्सटेंशन जो लंबे टूल परिणामों का संक्षिप्त प्रदर्शन छोटा करता है।',
-    codePrompt: 'CLI जो AI प्रॉम्प्ट, दस्तावेज़ या साझा करने के लिए सोर्स फ़ाइलों को एक फ़ाइल में जोड़ता है।',
-    flBuild: 'Flutter प्रोजेक्ट के लिए बिल्ड स्क्रिप्ट, pubspec.yaml में कॉन्फ़िगर।',
     utilsFish: 'आर्काइव और सिस्टम प्रबंधन के लिए fish shell यूटिलिटी।',
-    adbMdns: 'जब mDNS डिवाइस खोज लेता है पर अपने-आप कनेक्ट नहीं होता, तब Wi-Fi adb से Android डिवाइस जोड़ता है।',
-    gogsTheme: 'Gogs के लिए स्वचालित डार्क मोड।',
-    giteaCustom: 'Gitea के लिए कस्टम स्टाइल।',
-    colorInverter: 'hex, rgb या rgba में दिए गए रंगों को उलटता है।',
-    miwifi: 'इंट्रानेट सेवाएँ बाहर उपलब्ध कराने के लिए Mi WiFi राउटर का पब्लिक IP प्राप्त करता है।',
   },
   libraries: {
     title: 'लाइब्रेरी',

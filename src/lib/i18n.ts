@@ -1,9 +1,9 @@
+import type { Locales } from '../i18n/i18n-types'
 import { baseLocale, locales as generatedLocales } from '../i18n/i18n-util'
 
 export const defaultLocale = baseLocale
 
-/** @type {{ code: import('../i18n/i18n-types').Locales, label: string }[]} */
-const declaredLocales = [
+const declaredLocales: { code: Locales; label: string }[] = [
   { code: 'en', label: 'English' },
   { code: 'zh-CN', label: '简体中文' },
   { code: 'hi', label: 'हिन्दी' },
@@ -22,22 +22,16 @@ export const localeStorageKey = 'lollipopkit.website.locale'
  * Resolving against the generated bundle alone let a locale nobody declared become the
  * active one — a `fr` bundle left by an earlier build answers `?lang=fr`, and the selector
  * then holds no entry for the language the page is being shown in.
- *
- * @param {string} locale
- * @returns {locale is import('../i18n/i18n-types').Locales}
  */
-function isSupportedLocale(locale) {
+function isSupportedLocale(locale: string): locale is Locales {
   return locales.some((supported) => supported.code === locale)
 }
 
 /**
  * The locale a value asks for, or `undefined` when it asks for one this bundle does not
  * have. A tag it can be resolved from — `zh-TW`, `en-GB` — is resolved, not rejected.
- *
- * @param {string | null | undefined} locale
- * @returns {import('../i18n/i18n-types').Locales | undefined}
  */
-export function resolveLocale(locale) {
+export function resolveLocale(locale: string | null | undefined): Locales | undefined {
   if (!locale) return undefined
   if (isSupportedLocale(locale)) return locale
 
@@ -46,11 +40,7 @@ export function resolveLocale(locale) {
   return locales.find((supported) => supported.code.toLowerCase().split('-')[0] === language)?.code
 }
 
-/**
- * @param {string | null | undefined} locale
- * @returns {import('../i18n/i18n-types').Locales}
- */
-export function normalizeLocale(locale) {
+export function normalizeLocale(locale: string | null | undefined): Locales {
   return resolveLocale(locale) ?? defaultLocale
 }
 
@@ -83,8 +73,7 @@ export function getInitialLocale() {
   return defaultLocale
 }
 
-/** @param {string | null | undefined} locale */
-export function syncLocaleToUrl(locale) {
+export function syncLocaleToUrl(locale: string | null | undefined) {
   const url = new URL(window.location.href)
   url.searchParams.set('lang', normalizeLocale(locale))
   window.history.replaceState({}, '', url)

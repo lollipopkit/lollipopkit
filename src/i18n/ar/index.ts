@@ -54,8 +54,8 @@ const ar: Translation = {
       description:
         'يركّب SFTP وS3 وWebDAV وSMB وFTP وNFS وGoogle Drive وDropbox وOneDrive عبر File Provider.',
     },
-    gptbox: {
-      tagline: 'عميل غير رسمي لواجهة OpenAI البرمجية.',
+    llmbox: {
+      tagline: 'عميل غير رسمي لواجهات Anthropic/OpenAI/Gemini البرمجية.',
       description:
         'محادثة نصية وبالصور والصوت، مع المزامنة عبر WebDAV أو iCloud والاستيراد من ملفات تصدير ChatGPT. لا يزال قيد التطوير.',
     },
@@ -68,20 +68,11 @@ const ar: Translation = {
     ormc: 'نماذج OpenRouter، محدّثة يوميًا، مع مقارنة الأسعار وطول السياق.',
     liquidGlass: 'تأثيرات الزجاج السائل والانكسار لـ React وSvelte وVue.',
     exedevCli: 'واجهة سطر أوامر غير رسمية لـ exe.dev.',
-    sysinfoMcp: 'معلومات النظام عبر واجهة REST وخادم MCP.',
-    iconsFinder: 'معرض لحزمة Flutter المسماة icons_plus.',
     agentSkills: 'مهارات للوكلاء لـ TrailBase والتسليم والمستندات المرتبطة وغيرها.',
     piModelsMetadata: 'إضافة لـ Pi تعرض نماذج المزوّد وتضيف إليها بيانات OpenRouter الوصفية.',
     piTabFollowUp: 'إضافة لـ Pi لإرسال رسائل المتابعة بمفتاح Tab.',
     piUiFinetune: 'إضافة لـ Pi تختصر العرض المطوي لنتائج الأدوات الطويلة.',
-    codePrompt: 'أداة سطر أوامر تجمع ملفات الشيفرة في ملف واحد لموجّهات الذكاء الاصطناعي أو التوثيق أو المشاركة.',
-    flBuild: 'سكربت بناء لمشاريع Flutter، يُضبط في pubspec.yaml.',
     utilsFish: 'أدوات لصدفة fish للتعامل مع الأرشيفات وإدارة النظام.',
-    adbMdns: 'يتصل بأجهزة Android عبر adb اللاسلكي عندما يكتشفها mDNS لكن الاتصال التلقائي لا يعمل.',
-    gogsTheme: 'وضع داكن تلقائي لـ Gogs.',
-    giteaCustom: 'أنماط مخصصة لـ Gitea.',
-    colorInverter: 'يعكس الألوان المكتوبة بصيغة hex أو rgb أو rgba.',
-    miwifi: 'يحصل على عنوان IP العام لموجّه Mi WiFi لإتاحة خدمات الشبكة الداخلية.',
   },
   libraries: {
     title: 'المكتبات',

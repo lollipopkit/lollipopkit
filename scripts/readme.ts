@@ -1,25 +1,25 @@
 // Writes the project list in README.md (the GitHub profile) from the data the site uses,
 // so the profile and lollipopkit.com list the same projects.
 //
-//   node scripts/readme.js          rewrite README.md
-//   node scripts/readme.js --check  exit 1 when README.md is out of date
+//   node scripts/readme.ts          rewrite README.md
+//   node scripts/readme.ts --check  exit 1 when README.md is out of date
 import { readFile, writeFile } from 'node:fs/promises'
 import base from '../src/i18n/en/index.ts'
-import { apps, libraries, tools } from '../src/lib/projects.js'
+import type { Translation } from '../src/i18n/i18n-types.ts'
+import { apps, libraries, tools } from '../src/lib/projects.ts'
 
 // The base locale is typed as the loose `BaseTranslation`; the generated type has the keys.
-const en = /** @type {import('../src/i18n/i18n-types.ts').Translation} */ (base)
+const en = base as Translation
 
 const readme = new URL('../README.md', import.meta.url)
 const start = '<!-- projects:start -->'
 const end = '<!-- projects:end -->'
 
-/** @param {string | undefined} site */
-const siteLink = (site) => (site ? ` · [Website](${site})` : '')
+const siteLink = (site: string | undefined) => (site ? ` · [Website](${site})` : '')
 
 const lines = [
   start,
-  '<!-- Generated from src/lib/projects.js by `npm run readme`; do not edit by hand. -->',
+  '<!-- Generated from src/lib/projects.ts by `npm run readme`; do not edit by hand. -->',
   '',
   '### Apps',
   '',

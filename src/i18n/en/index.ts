@@ -53,8 +53,8 @@ const en: BaseTranslation = {
       description:
         'Mounts SFTP, S3, WebDAV, SMB, FTP, NFS, Google Drive, Dropbox and OneDrive through File Provider.',
     },
-    gptbox: {
-      tagline: 'Third-party client for the OpenAI API.',
+    llmbox: {
+      tagline: 'Third-party client for the Anthropic/OpenAI/Gemini API.',
       description:
         'Text, image and audio chat, with sync over WebDAV or iCloud and import from ChatGPT exports. Still in development.',
     },
@@ -67,20 +67,11 @@ const en: BaseTranslation = {
     ormc: 'OpenRouter models, updated daily, with price and context comparison.',
     liquidGlass: 'Liquid glass and refraction effects for React, Svelte and Vue.',
     exedevCli: 'Unofficial CLI for exe.dev.',
-    sysinfoMcp: 'System information over a REST API and an MCP server.',
-    iconsFinder: 'Gallery for the icons_plus Flutter package.',
     agentSkills: 'Agent skills for TrailBase, handoffs, linked docs and more.',
     piModelsMetadata: 'Pi extension that lists a provider’s models and adds OpenRouter metadata.',
     piTabFollowUp: 'Pi extension for sending follow-up messages with Tab.',
     piUiFinetune: 'Pi extension that shortens the collapsed display of verbose tool results.',
-    codePrompt: 'CLI that gathers source files into one file for AI prompts, docs or sharing.',
-    flBuild: 'Build script for Flutter projects, configured in pubspec.yaml.',
     utilsFish: 'fish shell utilities for archives and system management.',
-    adbMdns: 'Connects to Android devices over Wi-Fi adb when mDNS discovery works but automatic connection does not.',
-    gogsTheme: 'Automatic dark mode for Gogs.',
-    giteaCustom: 'Custom styles for Gitea.',
-    colorInverter: 'Inverts colors given as hex, rgb or rgba.',
-    miwifi: 'Gets the public IP of a Mi WiFi router for exposing intranet services.',
   },
   libraries: {
     title: 'Libraries',

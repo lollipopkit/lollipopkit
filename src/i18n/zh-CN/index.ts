@@ -51,8 +51,8 @@ const zhCN: Translation = {
       description:
         '通过 File Provider 挂载 SFTP、S3、WebDAV、SMB、FTP、NFS、Google Drive、Dropbox 和 OneDrive。',
     },
-    gptbox: {
-      tagline: 'OpenAI API 第三方客户端。',
+    llmbox: {
+      tagline: 'Anthropic/OpenAI/Gemini API 第三方客户端。',
       description: '文本、图片和语音对话，支持 WebDAV / iCloud 同步和导入 ChatGPT 导出文件。仍在开发中。',
     },
   },
@@ -63,20 +63,11 @@ const zhCN: Translation = {
     ormc: 'OpenRouter 模型列表，每日更新，可比较价格和上下文长度。',
     liquidGlass: '适用于 React、Svelte 和 Vue 的液态玻璃与折射效果。',
     exedevCli: 'exe.dev 的非官方 CLI。',
-    sysinfoMcp: '通过 REST API 和 MCP server 提供系统信息。',
-    iconsFinder: 'Flutter 包 icons_plus 的图标浏览器。',
     agentSkills: '用于 TrailBase、handoff、linked doc 等场景的 agent skills。',
     piModelsMetadata: 'Pi 扩展：列出 provider 的模型并补充 OpenRouter 元数据。',
     piTabFollowUp: 'Pi 扩展：用 Tab 发送 follow-up 消息。',
     piUiFinetune: 'Pi 扩展：缩短冗长工具结果的折叠显示。',
-    codePrompt: '把源码文件汇总成一个文件的 CLI，用于 AI prompt、文档或分享。',
-    flBuild: 'Flutter 项目构建脚本，在 pubspec.yaml 中配置。',
     utilsFish: 'fish shell 工具集，用于压缩包处理和系统管理。',
-    adbMdns: 'mDNS 能发现设备但无法自动连接时，用于连接 Android 设备的 WiFi adb。',
-    gogsTheme: 'Gogs 自动深色模式。',
-    giteaCustom: 'Gitea 自定义样式。',
-    colorInverter: '反转 hex、rgb、rgba 格式的颜色。',
-    miwifi: '获取小米路由器的公网 IP，用于内网穿透。',
   },
   libraries: {
     title: '库',

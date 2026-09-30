@@ -28,11 +28,7 @@
     },
     "types": ["vite/client"],
     "skipLibCheck": true,
-    /**
-     * Typecheck JS in `.svelte` and `.js` files by default.
-     * Disable this if you'd like to use dynamic types.
-     */
-    "checkJs": true
+    "strict": true
   },
   /**
    * Use global.d.ts instead of compilerOptions.types
@@ -43,5 +39,5 @@
    * modules that only `App.svelte` imports were never pulled into the program and an
    * invalid locale file passed `bun run check` untouched.
    */
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+  "include": ["src/**/*.ts", "src/**/*.svelte"]
 }

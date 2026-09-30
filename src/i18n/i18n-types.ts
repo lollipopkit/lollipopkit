@@ -154,9 +154,9 @@ type RootTranslation = {
 			 */
 			description: string
 		}
-		gptbox: {
+		llmbox: {
 			/**
-			 * T​h​i​r​d​-​p​a​r​t​y​ ​c​l​i​e​n​t​ ​f​o​r​ ​t​h​e​ ​O​p​e​n​A​I​ ​A​P​I​.
+			 * T​h​i​r​d​-​p​a​r​t​y​ ​c​l​i​e​n​t​ ​f​o​r​ ​t​h​e​ ​A​n​t​h​r​o​p​i​c​/​O​p​e​n​A​I​/​G​e​m​i​n​i​ ​A​P​I​.
 			 */
 			tagline: string
 			/**
@@ -191,14 +191,6 @@ type RootTranslation = {
 		 */
 		exedevCli: string
 		/**
-		 * S​y​s​t​e​m​ ​i​n​f​o​r​m​a​t​i​o​n​ ​o​v​e​r​ ​a​ ​R​E​S​T​ ​A​P​I​ ​a​n​d​ ​a​n​ ​M​C​P​ ​s​e​r​v​e​r​.
-		 */
-		sysinfoMcp: string
-		/**
-		 * G​a​l​l​e​r​y​ ​f​o​r​ ​t​h​e​ ​i​c​o​n​s​_​p​l​u​s​ ​F​l​u​t​t​e​r​ ​p​a​c​k​a​g​e​.
-		 */
-		iconsFinder: string
-		/**
 		 * A​g​e​n​t​ ​s​k​i​l​l​s​ ​f​o​r​ ​T​r​a​i​l​B​a​s​e​,​ ​h​a​n​d​o​f​f​s​,​ ​l​i​n​k​e​d​ ​d​o​c​s​ ​a​n​d​ ​m​o​r​e​.
 		 */
 		agentSkills: string
@@ -215,37 +207,9 @@ type RootTranslation = {
 		 */
 		piUiFinetune: string
 		/**
-		 * C​L​I​ ​t​h​a​t​ ​g​a​t​h​e​r​s​ ​s​o​u​r​c​e​ ​f​i​l​e​s​ ​i​n​t​o​ ​o​n​e​ ​f​i​l​e​ ​f​o​r​ ​A​I​ ​p​r​o​m​p​t​s​,​ ​d​o​c​s​ ​o​r​ ​s​h​a​r​i​n​g​.
-		 */
-		codePrompt: string
-		/**
-		 * B​u​i​l​d​ ​s​c​r​i​p​t​ ​f​o​r​ ​F​l​u​t​t​e​r​ ​p​r​o​j​e​c​t​s​,​ ​c​o​n​f​i​g​u​r​e​d​ ​i​n​ ​p​u​b​s​p​e​c​.​y​a​m​l​.
-		 */
-		flBuild: string
-		/**
 		 * f​i​s​h​ ​s​h​e​l​l​ ​u​t​i​l​i​t​i​e​s​ ​f​o​r​ ​a​r​c​h​i​v​e​s​ ​a​n​d​ ​s​y​s​t​e​m​ ​m​a​n​a​g​e​m​e​n​t​.
 		 */
 		utilsFish: string
-		/**
-		 * C​o​n​n​e​c​t​s​ ​t​o​ ​A​n​d​r​o​i​d​ ​d​e​v​i​c​e​s​ ​o​v​e​r​ ​W​i​-​F​i​ ​a​d​b​ ​w​h​e​n​ ​m​D​N​S​ ​d​i​s​c​o​v​e​r​y​ ​w​o​r​k​s​ ​b​u​t​ ​a​u​t​o​m​a​t​i​c​ ​c​o​n​n​e​c​t​i​o​n​ ​d​o​e​s​ ​n​o​t​.
-		 */
-		adbMdns: string
-		/**
-		 * A​u​t​o​m​a​t​i​c​ ​d​a​r​k​ ​m​o​d​e​ ​f​o​r​ ​G​o​g​s​.
-		 */
-		gogsTheme: string
-		/**
-		 * C​u​s​t​o​m​ ​s​t​y​l​e​s​ ​f​o​r​ ​G​i​t​e​a​.
-		 */
-		giteaCustom: string
-		/**
-		 * I​n​v​e​r​t​s​ ​c​o​l​o​r​s​ ​g​i​v​e​n​ ​a​s​ ​h​e​x​,​ ​r​g​b​ ​o​r​ ​r​g​b​a​.
-		 */
-		colorInverter: string
-		/**
-		 * G​e​t​s​ ​t​h​e​ ​p​u​b​l​i​c​ ​I​P​ ​o​f​ ​a​ ​M​i​ ​W​i​F​i​ ​r​o​u​t​e​r​ ​f​o​r​ ​e​x​p​o​s​i​n​g​ ​i​n​t​r​a​n​e​t​ ​s​e​r​v​i​c​e​s​.
-		 */
-		miwifi: string
 	}
 	libraries: {
 		/**
@@ -443,9 +407,9 @@ export type TranslationFunctions = {
 			 */
 			description: () => LocalizedString
 		}
-		gptbox: {
+		llmbox: {
 			/**
-			 * Third-party client for the OpenAI API.
+			 * Third-party client for the Anthropic/OpenAI/Gemini API.
 			 */
 			tagline: () => LocalizedString
 			/**
@@ -480,14 +444,6 @@ export type TranslationFunctions = {
 		 */
 		exedevCli: () => LocalizedString
 		/**
-		 * System information over a REST API and an MCP server.
-		 */
-		sysinfoMcp: () => LocalizedString
-		/**
-		 * Gallery for the icons_plus Flutter package.
-		 */
-		iconsFinder: () => LocalizedString
-		/**
 		 * Agent skills for TrailBase, handoffs, linked docs and more.
 		 */
 		agentSkills: () => LocalizedString
@@ -504,37 +460,9 @@ export type TranslationFunctions = {
 		 */
 		piUiFinetune: () => LocalizedString
 		/**
-		 * CLI that gathers source files into one file for AI prompts, docs or sharing.
-		 */
-		codePrompt: () => LocalizedString
-		/**
-		 * Build script for Flutter projects, configured in pubspec.yaml.
-		 */
-		flBuild: () => LocalizedString
-		/**
 		 * fish shell utilities for archives and system management.
 		 */
 		utilsFish: () => LocalizedString
-		/**
-		 * Connects to Android devices over Wi-Fi adb when mDNS discovery works but automatic connection does not.
-		 */
-		adbMdns: () => LocalizedString
-		/**
-		 * Automatic dark mode for Gogs.
-		 */
-		gogsTheme: () => LocalizedString
-		/**
-		 * Custom styles for Gitea.
-		 */
-		giteaCustom: () => LocalizedString
-		/**
-		 * Inverts colors given as hex, rgb or rgba.
-		 */
-		colorInverter: () => LocalizedString
-		/**
-		 * Gets the public IP of a Mi WiFi router for exposing intranet services.
-		 */
-		miwifi: () => LocalizedString
 	}
 	libraries: {
 		/**
