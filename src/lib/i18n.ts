@@ -60,7 +60,7 @@ export function getInitialLocale() {
   const queryLocale = resolveLocale(params.get('lang'))
   if (queryLocale) return queryLocale
 
-  const storedLocale = resolveLocale(localStorage.getItem(localeStorageKey))
+  const storedLocale = resolveLocale(readStoredLocale())
   if (storedLocale) return storedLocale
 
   // Every language the browser lists, in the order it lists them: reading only the first
@@ -97,6 +97,23 @@ export function activateLocale(locale: Locales) {
 export function chooseLocale(locale: string | null | undefined) {
   const resolved = normalizeLocale(locale)
   activateLocale(resolved)
-  localStorage.setItem(localeStorageKey, resolved)
+  try {
+    localStorage.setItem(localeStorageKey, resolved)
+  } catch {
+    // Best effort: with storage blocked the choice still applies to this page and the URL.
+  }
   syncLocaleToUrl(resolved)
+}
+
+/**
+ * The stored preference, or `null` when storage cannot be read — accessing
+ * `localStorage` throws when the browser blocks site data, which must not stop the page
+ * from rendering.
+ */
+function readStoredLocale(): string | null {
+  try {
+    return localStorage.getItem(localeStorageKey)
+  } catch {
+    return null
+  }
 }
