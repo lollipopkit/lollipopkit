@@ -90,6 +90,12 @@ const ar: Translation = {
   footer: {
     blog: 'المدونة',
     status: 'الحالة',
+    privacy: 'الخصوصية',
+  },
+  privacy: {
+    title: 'سياسة الخصوصية — lollipopkit',
+    description:
+      'كيف يتعامل موقع lollipopkit.com وتطبيقات lollipopkit مع بياناتك، بما في ذلك بيانات مستخدمي Google.',
   },
 }
 

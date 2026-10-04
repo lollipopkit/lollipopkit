@@ -90,6 +90,12 @@ const hi: Translation = {
   footer: {
     blog: 'ब्लॉग',
     status: 'स्थिति',
+    privacy: 'गोपनीयता',
+  },
+  privacy: {
+    title: 'गोपनीयता नीति — lollipopkit',
+    description:
+      'lollipopkit.com और lollipopkit के ऐप्स आपके डेटा को कैसे संभालते हैं, जिसमें Google उपयोगकर्ता डेटा भी शामिल है।',
   },
 }
 

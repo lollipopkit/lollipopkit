@@ -90,6 +90,12 @@ const es: Translation = {
   footer: {
     blog: 'Blog',
     status: 'Estado',
+    privacy: 'Privacidad',
+  },
+  privacy: {
+    title: 'Política de privacidad — lollipopkit',
+    description:
+      'Cómo lollipopkit.com y las aplicaciones de lollipopkit tratan tus datos, incluidos los datos de usuario de Google.',
   },
 }
 

@@ -9,6 +9,14 @@ kept in the `language` / `license` / `sort` query parameters). Sorting by stars 
 update was left out on purpose: it would need a GitHub API call at build time. Live at
 `lollipopkit.com` (Cloudflare Pages, see below). This file is the brief.
 
+`privacy.html` (served at `/privacy`) is the privacy policy for the site and every app,
+and the one the shared Google OAuth consent screen links to. Its text is one Markdown file
+per locale in `src/privacy/`, rendered to HTML at build time by the `markdown-html` plugin
+in `vite.config.ts`; a locale without a file falls back to `en.md`, which is authoritative.
+Only the page title and description are i18n keys. An app that accesses Google user data
+must be listed under "Google user data" in every locale before it requests access;
+app-specific policies (MFuse: `mfuse.lollipopkit.com/privacy.html`) are linked from it.
+
 The repo is also the GitHub profile repo, so the root `README.md` is the profile page.
 Its project list, between the `projects:start` / `projects:end` markers, is generated
 from `src/lib/projects.ts` and the English copy by `npm run readme`; `npm run check`

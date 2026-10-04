@@ -266,6 +266,20 @@ type RootTranslation = {
 		 * S​t​a​t​u​s
 		 */
 		status: string
+		/**
+		 * P​r​i​v​a​c​y
+		 */
+		privacy: string
+	}
+	privacy: {
+		/**
+		 * P​r​i​v​a​c​y​ ​P​o​l​i​c​y​ ​—​ ​l​o​l​l​i​p​o​p​k​i​t
+		 */
+		title: string
+		/**
+		 * H​o​w​ ​l​o​l​l​i​p​o​p​k​i​t​.​c​o​m​ ​a​n​d​ ​l​o​l​l​i​p​o​p​k​i​t​'​s​ ​a​p​p​s​ ​h​a​n​d​l​e​ ​y​o​u​r​ ​d​a​t​a​,​ ​i​n​c​l​u​d​i​n​g​ ​G​o​o​g​l​e​ ​u​s​e​r​ ​d​a​t​a​.
+		 */
+		description: string
 	}
 }
 
@@ -519,6 +533,20 @@ export type TranslationFunctions = {
 		 * Status
 		 */
 		status: () => LocalizedString
+		/**
+		 * Privacy
+		 */
+		privacy: () => LocalizedString
+	}
+	privacy: {
+		/**
+		 * Privacy Policy — lollipopkit
+		 */
+		title: () => LocalizedString
+		/**
+		 * How lollipopkit.com and lollipopkit's apps handle your data, including Google user data.
+		 */
+		description: () => LocalizedString
 	}
 }
 

@@ -1,0 +1,65 @@
+@import './app.css';
+
+.policy {
+  width: min(760px, 92vw);
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+  color: var(--near-black);
+}
+
+.policy h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--black);
+}
+
+.policy h2 {
+  margin-top: 2.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+
+/* The effective-date line that follows the heading. */
+.policy h1 + p {
+  margin-top: 0.75rem;
+  color: var(--stone);
+  font-size: 0.9rem;
+}
+
+.policy p,
+.policy ul {
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+.policy ul {
+  padding-inline-start: 1.25rem;
+}
+
+.policy li + li {
+  margin-top: 0.4rem;
+}
+
+.policy a {
+  color: var(--black);
+  text-underline-offset: 2px;
+}
+
+/* URLs and paths read left to right in every locale, Arabic included. */
+.policy code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+  background: var(--snow);
+  border: 1px solid var(--light-gray);
+  overflow-wrap: anywhere;
+}

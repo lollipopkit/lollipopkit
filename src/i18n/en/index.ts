@@ -89,6 +89,12 @@ const en: BaseTranslation = {
   footer: {
     blog: 'Blog',
     status: 'Status',
+    privacy: 'Privacy',
+  },
+  privacy: {
+    title: 'Privacy Policy — lollipopkit',
+    description:
+      'How lollipopkit.com and lollipopkit\'s apps handle your data, including Google user data.',
   },
 }
 

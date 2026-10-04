@@ -1,15 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import LL, { setLocale } from './i18n/i18n-svelte'
-  import { loadLocale } from './i18n/i18n-util.sync'
-  import type { Locales } from './i18n/i18n-types'
-  import {
-    getInitialLocale,
-    locales,
-    localeStorageKey,
-    normalizeLocale,
-    syncLocaleToUrl,
-  } from './lib/i18n'
+  import LL from './i18n/i18n-svelte'
+  import { activateLocale, chooseLocale, getInitialLocale } from './lib/i18n'
+  import LanguageSelect from './lib/LanguageSelect.svelte'
   import { iconUrl } from './lib/icons'
   import { apps, libraries, tools } from './lib/projects'
   import {
@@ -32,11 +25,9 @@
   const initialLocale = typeof window === 'undefined' ? undefined : getInitialLocale()
 
   if (initialLocale) {
-    loadLocale(initialLocale)
-    setLocale(initialLocale)
+    activateLocale(initialLocale)
   }
 
-  let locale = $state(initialLocale)
   let isMounted = $state(false)
 
   const listed = [...apps, ...tools, ...libraries]
@@ -72,17 +63,8 @@
     syncFiltersToUrl(filters)
   }
 
-  function applyLocale(nextLocale: Locales) {
-    locale = nextLocale
-    loadLocale(nextLocale)
-    setLocale(nextLocale)
-    localStorage.setItem(localeStorageKey, nextLocale)
-  }
-
   onMount(() => {
-    const nextLocale = locale || getInitialLocale()
-    applyLocale(nextLocale)
-    syncLocaleToUrl(nextLocale)
+    chooseLocale(initialLocale ?? getInitialLocale())
     // Drops query values `readFilters` rejected, so the URL matches what is shown.
     syncFiltersToUrl(filters)
 
@@ -99,15 +81,9 @@
       .querySelector('meta[name="description"]')
       ?.setAttribute('content', $LL.meta.description())
   })
-
-  function handleLocaleChange(event: Event & { currentTarget: HTMLSelectElement }) {
-    const nextLocale = normalizeLocale(event.currentTarget.value)
-    applyLocale(nextLocale)
-    syncLocaleToUrl(nextLocale)
-  }
 </script>
 
-{#if locale && isMounted}
+{#if isMounted}
   <main class="site">
     <header class="site-nav" id="top">
       <a class="brand" href="#top">
@@ -120,20 +96,7 @@
         {#if libraryGroups.length}<a href="#libraries">{$LL.nav.libraries()}</a>{/if}
       </nav>
       <div class="nav-actions">
-        <label class="language-switcher">
-          <span class="sr-only">{$LL.nav.languageLabel()}</span>
-          <select
-            id="locale"
-            name="locale"
-            aria-label={$LL.nav.languageLabel()}
-            value={locale}
-            onchange={handleLocaleChange}
-          >
-            {#each locales as item}
-              <option value={item.code}>{item.label}</option>
-            {/each}
-          </select>
-        </label>
+        <LanguageSelect />
         <a class="nav-cta" href={github}>GitHub</a>
       </div>
     </header>
@@ -295,6 +258,7 @@
         <a href={blog}>{$LL.footer.blog()}</a>
         <a href={status}>{$LL.footer.status()}</a>
         <a href={cdn}>CDN</a>
+        <a href="/privacy">{$LL.footer.privacy()}</a>
       </div>
     </footer>
   </main>

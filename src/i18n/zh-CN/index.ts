@@ -85,6 +85,12 @@ const zhCN: Translation = {
   footer: {
     blog: '博客',
     status: '服务状态',
+    privacy: '隐私政策',
+  },
+  privacy: {
+    title: '隐私政策 — lollipopkit',
+    description:
+      'lollipopkit.com 及 lollipopkit 的应用如何处理你的数据，包括 Google 用户数据。',
   },
 }
 
