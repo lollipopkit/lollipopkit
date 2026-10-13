@@ -81,6 +81,7 @@ const zhCN: Translation = {
     flMagnetic: 'Flutter 的 Magnetic 风格浮动气泡选择器。',
     webdavClient: 'WebDAV 客户端，webdav_client 的维护分支。',
     exaGo: 'Exa 搜索 API 的 SDK。',
+    seaGlass: '玻璃风格的设计系统。',
   },
   footer: {
     blog: '博客',

@@ -59,7 +59,8 @@ export interface Library extends Listed {
     | 'ntexBasicauth'
     | 'ntexRatelimiter'
     | 'exaGo'
-  /** The registry page when the package is published under this name, the repo otherwise. */
+    | 'seaGlass'
+  /** The demo site when there is one, else the registry page when published under this name, else the repo. */
   href: string
 }
 
@@ -239,4 +240,11 @@ export const libraries: Library[] = [
     href: 'https://crates.io/crates/ntex-ratelimiter',
   },
   { key: 'exaGo', name: 'exa', language: 'Go', license: 'Apache-2.0', href: `${gh}/exa` },
+  {
+    key: 'seaGlass',
+    name: 'sea-glass',
+    language: 'JavaScript',
+    license: 'Apache-2.0',
+    href: 'https://sea-glass.lolli.tech',
+  },
 ]

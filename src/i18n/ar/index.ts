@@ -86,6 +86,7 @@ const ar: Translation = {
     flMagnetic: 'منتقي فقاعات عائمة بأسلوب Magnetic لـ Flutter.',
     webdavClient: 'عميل WebDAV، نسخة متفرعة مُصانة من webdav_client.',
     exaGo: 'SDK لواجهة بحث Exa.',
+    seaGlass: 'نظام تصميم بأسلوب الزجاج.',
   },
   footer: {
     blog: 'المدونة',

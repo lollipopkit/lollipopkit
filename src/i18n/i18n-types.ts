@@ -256,6 +256,10 @@ type RootTranslation = {
 		 * S​D​K​ ​f​o​r​ ​t​h​e​ ​E​x​a​ ​s​e​a​r​c​h​ ​A​P​I​.
 		 */
 		exaGo: string
+		/**
+		 * G​l​a​s​s​-​s​t​y​l​e​ ​d​e​s​i​g​n​ ​s​y​s​t​e​m​.
+		 */
+		seaGlass: string
 	}
 	footer: {
 		/**
@@ -523,6 +527,10 @@ export type TranslationFunctions = {
 		 * SDK for the Exa search API.
 		 */
 		exaGo: () => LocalizedString
+		/**
+		 * Glass-style design system.
+		 */
+		seaGlass: () => LocalizedString
 	}
 	footer: {
 		/**

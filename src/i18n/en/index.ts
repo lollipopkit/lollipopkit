@@ -85,6 +85,7 @@ const en: BaseTranslation = {
     flMagnetic: 'Magnetic-style floating bubble picker for Flutter.',
     webdavClient: 'WebDAV client, a maintained fork of webdav_client.',
     exaGo: 'SDK for the Exa search API.',
+    seaGlass: 'Glass-style design system.',
   },
   footer: {
     blog: 'Blog',

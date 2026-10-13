@@ -86,6 +86,7 @@ const es: Translation = {
     flMagnetic: 'Selector de burbujas flotantes al estilo Magnetic para Flutter.',
     webdavClient: 'Cliente WebDAV, un fork mantenido de webdav_client.',
     exaGo: 'SDK para la API de búsqueda de Exa.',
+    seaGlass: 'Sistema de diseño de estilo vidrio.',
   },
   footer: {
     blog: 'Blog',

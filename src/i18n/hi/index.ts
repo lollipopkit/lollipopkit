@@ -86,6 +86,7 @@ const hi: Translation = {
     flMagnetic: 'Flutter के लिए Magnetic-शैली का तैरता बबल पिकर।',
     webdavClient: 'WebDAV क्लाइंट, webdav_client का अनुरक्षित फ़ोर्क।',
     exaGo: 'Exa सर्च API के लिए SDK।',
+    seaGlass: 'ग्लास शैली का डिज़ाइन सिस्टम।',
   },
   footer: {
     blog: 'ब्लॉग',

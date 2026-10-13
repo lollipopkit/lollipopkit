@@ -46,6 +46,7 @@
 - [ntex-basicauth](https://crates.io/crates/ntex-basicauth) `Rust` — Basic authorization middleware for ntex.
 - [ntex-ratelimiter](https://crates.io/crates/ntex-ratelimiter) `Rust` — Rate limiting middleware for ntex.
 - [exa](https://github.com/lollipopkit/exa) `Go` — SDK for the Exa search API.
+- [sea-glass](https://sea-glass.lolli.tech) `JavaScript` — Glass-style design system.
 
 Filter by language and license on [lollipopkit.com](https://lollipopkit.com).
 <!-- projects:end -->
