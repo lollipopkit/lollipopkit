@@ -40,9 +40,9 @@ can load it. `avatars/` and `logos/` belong to the profile, not the site.
   - Commands, URLs and code stay `dir="ltr"`.
   - `hi` / `ar` headings need `line-height: 1.35` and no negative letter-spacing.
   - Locale resolution matches on the language subtag (`es-MX` → `es`).
-  - Regenerate `src/i18n/` with the pinned generator described in the MMetrics
-    `website/README.md` (typesafe-i18n 5.27.1 + TypeScript 5.9.3, run from outside the
-    project). Non-native translations should be marked for review.
+  - Regenerate `src/i18n/` with `npm run typesafe-i18n` (`scripts/i18n.ts` points the
+    generator at `@typescript/typescript6`, since TypeScript 7 has no compiler API).
+    Non-native translations should be marked for review.
 - **No fabricated content** — no testimonials, no invented numbers. Star counts and
   similar figures change; fetch them at build time or leave them out.
 
