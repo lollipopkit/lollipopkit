@@ -106,8 +106,7 @@ const es: Translation = {
     intro:
       'Las apps y herramientas de lollipopkit son gratuitas y de código abierto. Si te resultan útiles, una donación ayuda a financiar su desarrollo.',
     donors: 'Donantes',
-    loading: 'Cargando…',
-    failed: 'No se pudo cargar. Inténtalo más tarde.',
+    alipay: 'Alipay',
   },
 }
 

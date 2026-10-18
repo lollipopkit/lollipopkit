@@ -311,13 +311,9 @@ type RootTranslation = {
 		 */
 		donors: string
 		/**
-		 * L​o​a​d​i​n​g​…
+		 * A​l​i​p​a​y
 		 */
-		loading: string
-		/**
-		 * C​o​u​l​d​ ​n​o​t​ ​l​o​a​d​.​ ​T​r​y​ ​a​g​a​i​n​ ​l​a​t​e​r​.
-		 */
-		failed: string
+		alipay: string
 	}
 }
 
@@ -616,13 +612,9 @@ export type TranslationFunctions = {
 		 */
 		donors: () => LocalizedString
 		/**
-		 * Loading…
+		 * Alipay
 		 */
-		loading: () => LocalizedString
-		/**
-		 * Could not load. Try again later.
-		 */
-		failed: () => LocalizedString
+		alipay: () => LocalizedString
 	}
 }
 

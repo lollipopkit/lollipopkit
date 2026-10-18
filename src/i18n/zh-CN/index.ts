@@ -100,8 +100,7 @@ const zhCN: Translation = {
     heading: '捐赠',
     intro: 'lollipopkit 的应用和工具都免费开源。如果它们对你有用，捐赠可以支持后续开发。',
     donors: '捐赠者',
-    loading: '加载中…',
-    failed: '加载失败，请稍后再试。',
+    alipay: '支付宝',
   },
 }
 

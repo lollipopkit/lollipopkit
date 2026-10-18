@@ -120,9 +120,8 @@ card. The owner chose not to link the LGBT+ Avatar Gen (https://tsag.lpkt.cn) or
 
 The old download paths, `/serverbox` and `/gptbox`, redirect to the CDN (see below).
 
-`donate.html` (served at `/donate`) replaces the CDN's donate page. It reads the payment
-links (`link.json`) and the donor list (`data.json`) from `https://cdn.lollipopkit.com/donate/`
-at runtime (`src/lib/donate.ts`), so those two files stay the one place to edit them.
+`donate.html` (served at `/donate`) replaces the CDN's donate page. The payment links and
+the donor list are in `src/lib/donate.ts`; a new donation goes at the end of the list.
 
 To confirm with the owner before listing: `ipgeo.lollipopkit.com` (the ipgeo-shards data,
 Pages project `ipgeo-shards`), `sbmd.lollipopkit.com` (the ServerBox Monitor web panel,

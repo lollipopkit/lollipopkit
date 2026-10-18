@@ -105,8 +105,7 @@ const en: BaseTranslation = {
     intro:
       'lollipopkit\'s apps and tools are free and open source. If they are useful to you, a donation helps fund their development.',
     donors: 'Donors',
-    loading: 'Loading…',
-    failed: 'Could not load. Try again later.',
+    alipay: 'Alipay',
   },
 }
 

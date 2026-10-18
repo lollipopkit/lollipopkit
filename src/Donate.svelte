@@ -3,10 +3,7 @@
   import LL from './i18n/i18n-svelte'
   import { activateLocale, chooseLocale, getInitialLocale } from './lib/i18n'
   import LanguageSelect from './lib/LanguageSelect.svelte'
-  import { loadDonations, loadLinks } from './lib/donate'
-
-  const links = loadLinks()
-  const donations = loadDonations()
+  import { donations, links } from './lib/donate'
 
   const initialLocale = getInitialLocale()
   activateLocale(initialLocale)
@@ -36,35 +33,23 @@
   <h1>{$LL.donate.heading()}</h1>
   <p class="donate-intro">{$LL.donate.intro()}</p>
 
-  {#await links}
-    <p class="donate-status">{$LL.donate.loading()}</p>
-  {:then links}
-    <div class="donate-links">
-      {#each links as link (link.url)}
-        <a class="btn btn-primary" href={link.url} target="_blank" rel="noopener noreferrer">
-          {link.name}
-        </a>
-      {/each}
-    </div>
-  {:catch}
-    <p class="donate-status">{$LL.donate.failed()}</p>
-  {/await}
+  <div class="donate-links">
+    {#each links as link (link.key)}
+      <a class="btn btn-primary" href={link.url} target="_blank" rel="noopener noreferrer">
+        {link.key === 'alipay' ? $LL.donate.alipay() : 'Ko-fi'}
+      </a>
+    {/each}
+  </div>
 
   <h2>{$LL.donate.donors()}</h2>
-  {#await donations}
-    <p class="donate-status">{$LL.donate.loading()}</p>
-  {:then donations}
-    <ul class="donor-list">
-      {#each donations as donation, index (index)}
-        <li>
-          <span dir="auto">{donation.name}</span>
-          <span class="donor-amount" dir="ltr">{donation.amount}</span>
-        </li>
-      {/each}
-    </ul>
-  {:catch}
-    <p class="donate-status">{$LL.donate.failed()}</p>
-  {/await}
+  <ul class="donor-list">
+    {#each donations as donation, index (index)}
+      <li>
+        <span dir="auto">{donation.name}</span>
+        <span class="donor-amount" dir="ltr">{donation.currency} {donation.amount}</span>
+      </li>
+    {/each}
+  </ul>
 </main>
 
 <footer class="site-footer">

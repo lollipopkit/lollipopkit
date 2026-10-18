@@ -1,47 +1,44 @@
-// The CDN keeps the payment links and the donor list, the same files its old donate page
-// read; it answers with `Access-Control-Allow-Origin: *`, so this site reads them directly.
-const source = 'https://cdn.lollipopkit.com/donate'
-
 export interface DonateLink {
-  name: string
+  /** `alipay` takes its label from the locale; the others are brand names. */
+  key: 'kofi' | 'alipay'
   url: string
 }
 
 export interface Donation {
   name: string
-  /** As recorded, currency first: `CNY 5`, `USD 10`. */
-  amount: string
+  currency: 'CNY' | 'USD'
+  amount: number
 }
 
-/** `{ "Ko-fi": "https://ko-fi.com/…", … }`; entries that are not https URLs are dropped. */
-export async function loadLinks(): Promise<DonateLink[]> {
-  return entriesOf(await fetchJson('link.json'))
-    .filter(([, url]) => isHttps(url))
-    .map(([name, url]) => ({ name, url }))
-}
+export const links: DonateLink[] = [
+  { key: 'kofi', url: 'https://ko-fi.com/lollipopkit' },
+  { key: 'alipay', url: 'https://qr.alipay.com/tsx12409viy4mxl5suqtjae' },
+]
 
-/** `{ "<donor>": "<currency> <amount>", … }`, in the order the file lists them. */
-export async function loadDonations(): Promise<Donation[]> {
-  return entriesOf(await fetchJson('data.json')).map(([name, amount]) => ({ name, amount }))
-}
-
-async function fetchJson(file: string): Promise<unknown> {
-  const response = await fetch(`${source}/${file}`)
-  if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`)
-  return response.json()
-}
-
-function entriesOf(value: unknown): [string, string][] {
-  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
-    throw new Error('Expected a JSON object')
-  }
-  return Object.entries(value).filter((entry): entry is [string, string] => typeof entry[1] === 'string')
-}
-
-function isHttps(url: string) {
-  try {
-    return new URL(url).protocol === 'https:'
-  } catch {
-    return false
-  }
-}
+/** In the order they came in; a new donation goes at the end. */
+export const donations: Donation[] = [
+  { name: '加油', currency: 'CNY', amount: 5 },
+  { name: '*玮', currency: 'CNY', amount: 5 },
+  { name: 'Eufat', currency: 'CNY', amount: 30 },
+  { name: 'Luke Egan', currency: 'USD', amount: 5 },
+  { name: 'Ludwig Risse', currency: 'USD', amount: 50 },
+  { name: '陈归归', currency: 'CNY', amount: 30 },
+  { name: 'Integral', currency: 'USD', amount: 10 },
+  { name: 'Paul Hoffmann', currency: 'USD', amount: 5 },
+  { name: 'Carlos lee zhuo', currency: 'USD', amount: 10 },
+  { name: 'Zhangzhi Hu', currency: 'USD', amount: 10 },
+  { name: '「小白」客栈', currency: 'USD', amount: 30 },
+  { name: '**芊', currency: 'CNY', amount: 5 },
+  { name: 'Sunny', currency: 'USD', amount: 10 },
+  { name: 'Nextstrain', currency: 'CNY', amount: 50 },
+  { name: 'Soul', currency: 'CNY', amount: 55 },
+  { name: '洛烟', currency: 'CNY', amount: 50 },
+  { name: '*泽', currency: 'CNY', amount: 188 },
+  { name: '**彬', currency: 'CNY', amount: 10 },
+  { name: 'Dirichlet', currency: 'CNY', amount: 288 },
+  { name: 'Christian Schick', currency: 'USD', amount: 7 },
+  { name: '*邦', currency: 'CNY', amount: 1 },
+  { name: '**杭', currency: 'CNY', amount: 8.88 },
+  { name: 'Maxi Barg', currency: 'USD', amount: 20 },
+  { name: 'CR4SH3UR', currency: 'USD', amount: 10 },
+]
