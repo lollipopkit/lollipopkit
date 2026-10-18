@@ -274,6 +274,10 @@ type RootTranslation = {
 		 * P​r​i​v​a​c​y
 		 */
 		privacy: string
+		/**
+		 * D​o​n​a​t​e
+		 */
+		donate: string
 	}
 	privacy: {
 		/**
@@ -284,6 +288,36 @@ type RootTranslation = {
 		 * H​o​w​ ​l​o​l​l​i​p​o​p​k​i​t​.​c​o​m​ ​a​n​d​ ​l​o​l​l​i​p​o​p​k​i​t​'​s​ ​a​p​p​s​ ​h​a​n​d​l​e​ ​y​o​u​r​ ​d​a​t​a​,​ ​i​n​c​l​u​d​i​n​g​ ​G​o​o​g​l​e​ ​u​s​e​r​ ​d​a​t​a​.
 		 */
 		description: string
+	}
+	donate: {
+		/**
+		 * D​o​n​a​t​e​ ​—​ ​l​o​l​l​i​p​o​p​k​i​t
+		 */
+		title: string
+		/**
+		 * S​u​p​p​o​r​t​ ​l​o​l​l​i​p​o​p​k​i​t​'​s​ ​o​p​e​n​-​s​o​u​r​c​e​ ​a​p​p​s​ ​w​i​t​h​ ​a​ ​d​o​n​a​t​i​o​n​.
+		 */
+		description: string
+		/**
+		 * D​o​n​a​t​e
+		 */
+		heading: string
+		/**
+		 * l​o​l​l​i​p​o​p​k​i​t​'​s​ ​a​p​p​s​ ​a​n​d​ ​t​o​o​l​s​ ​a​r​e​ ​f​r​e​e​ ​a​n​d​ ​o​p​e​n​ ​s​o​u​r​c​e​.​ ​I​f​ ​t​h​e​y​ ​a​r​e​ ​u​s​e​f​u​l​ ​t​o​ ​y​o​u​,​ ​a​ ​d​o​n​a​t​i​o​n​ ​h​e​l​p​s​ ​f​u​n​d​ ​t​h​e​i​r​ ​d​e​v​e​l​o​p​m​e​n​t​.
+		 */
+		intro: string
+		/**
+		 * D​o​n​o​r​s
+		 */
+		donors: string
+		/**
+		 * L​o​a​d​i​n​g​…
+		 */
+		loading: string
+		/**
+		 * C​o​u​l​d​ ​n​o​t​ ​l​o​a​d​.​ ​T​r​y​ ​a​g​a​i​n​ ​l​a​t​e​r​.
+		 */
+		failed: string
 	}
 }
 
@@ -545,6 +579,10 @@ export type TranslationFunctions = {
 		 * Privacy
 		 */
 		privacy: () => LocalizedString
+		/**
+		 * Donate
+		 */
+		donate: () => LocalizedString
 	}
 	privacy: {
 		/**
@@ -555,6 +593,36 @@ export type TranslationFunctions = {
 		 * How lollipopkit.com and lollipopkit's apps handle your data, including Google user data.
 		 */
 		description: () => LocalizedString
+	}
+	donate: {
+		/**
+		 * Donate — lollipopkit
+		 */
+		title: () => LocalizedString
+		/**
+		 * Support lollipopkit's open-source apps with a donation.
+		 */
+		description: () => LocalizedString
+		/**
+		 * Donate
+		 */
+		heading: () => LocalizedString
+		/**
+		 * lollipopkit's apps and tools are free and open source. If they are useful to you, a donation helps fund their development.
+		 */
+		intro: () => LocalizedString
+		/**
+		 * Donors
+		 */
+		donors: () => LocalizedString
+		/**
+		 * Loading…
+		 */
+		loading: () => LocalizedString
+		/**
+		 * Could not load. Try again later.
+		 */
+		failed: () => LocalizedString
 	}
 }
 

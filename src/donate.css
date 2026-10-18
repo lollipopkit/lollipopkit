@@ -1,0 +1,71 @@
+@import './app.css';
+
+.donate {
+  width: min(760px, 92vw);
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+  color: var(--near-black);
+}
+
+.donate h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--black);
+}
+
+.donate h2 {
+  margin-top: 3rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+
+.donate-intro {
+  margin-top: 1rem;
+  line-height: 1.7;
+  color: var(--stone);
+}
+
+.donate-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.donate-status {
+  margin-top: 1rem;
+  color: var(--stone);
+}
+
+.donor-list {
+  list-style: none;
+  margin-top: 1rem;
+  border-radius: var(--radius-container);
+  border: 1px solid var(--light-gray);
+  overflow: hidden;
+}
+
+.donor-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid var(--light-gray);
+  overflow-wrap: anywhere;
+}
+
+.donor-list li:last-child {
+  border-bottom: none;
+}
+
+.donor-amount {
+  flex: none;
+  color: var(--stone);
+  font-variant-numeric: tabular-nums;
+}

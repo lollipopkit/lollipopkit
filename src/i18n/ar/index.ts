@@ -92,11 +92,22 @@ const ar: Translation = {
     blog: 'المدونة',
     status: 'الحالة',
     privacy: 'الخصوصية',
+    donate: 'تبرّع',
   },
   privacy: {
     title: 'سياسة الخصوصية — lollipopkit',
     description:
       'كيف يتعامل موقع lollipopkit.com وتطبيقات lollipopkit مع بياناتك، بما في ذلك بيانات مستخدمي Google.',
+  },
+  donate: {
+    title: 'تبرّع — lollipopkit',
+    description: 'ادعم تطبيقات lollipopkit مفتوحة المصدر بتبرّع.',
+    heading: 'تبرّع',
+    intro:
+      'تطبيقات lollipopkit وأدواته مجانية ومفتوحة المصدر. إن كانت مفيدة لك، فالتبرّع يساعد في تمويل تطويرها.',
+    donors: 'المتبرّعون',
+    loading: 'جارٍ التحميل…',
+    failed: 'تعذّر التحميل. حاول لاحقًا.',
   },
 }
 

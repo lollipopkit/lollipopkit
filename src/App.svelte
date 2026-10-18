@@ -258,6 +258,7 @@
         <a href={blog}>{$LL.footer.blog()}</a>
         <a href={status}>{$LL.footer.status()}</a>
         <a href={cdn}>CDN</a>
+        <a href="/donate">{$LL.footer.donate()}</a>
         <a href="/privacy">{$LL.footer.privacy()}</a>
       </div>
     </footer>

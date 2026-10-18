@@ -92,11 +92,22 @@ const es: Translation = {
     blog: 'Blog',
     status: 'Estado',
     privacy: 'Privacidad',
+    donate: 'Donar',
   },
   privacy: {
     title: 'Política de privacidad — lollipopkit',
     description:
       'Cómo lollipopkit.com y las aplicaciones de lollipopkit tratan tus datos, incluidos los datos de usuario de Google.',
+  },
+  donate: {
+    title: 'Donar — lollipopkit',
+    description: 'Apoya las apps de código abierto de lollipopkit con una donación.',
+    heading: 'Donar',
+    intro:
+      'Las apps y herramientas de lollipopkit son gratuitas y de código abierto. Si te resultan útiles, una donación ayuda a financiar su desarrollo.',
+    donors: 'Donantes',
+    loading: 'Cargando…',
+    failed: 'No se pudo cargar. Inténtalo más tarde.',
   },
 }
 

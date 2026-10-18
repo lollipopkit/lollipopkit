@@ -92,11 +92,22 @@ const hi: Translation = {
     blog: 'ब्लॉग',
     status: 'स्थिति',
     privacy: 'गोपनीयता',
+    donate: 'दान',
   },
   privacy: {
     title: 'गोपनीयता नीति — lollipopkit',
     description:
       'lollipopkit.com और lollipopkit के ऐप्स आपके डेटा को कैसे संभालते हैं, जिसमें Google उपयोगकर्ता डेटा भी शामिल है।',
+  },
+  donate: {
+    title: 'दान — lollipopkit',
+    description: 'दान देकर lollipopkit के ओपन-सोर्स ऐप्स का समर्थन करें।',
+    heading: 'दान',
+    intro:
+      'lollipopkit के ऐप्स और टूल मुफ़्त और ओपन सोर्स हैं। अगर ये आपके काम आते हैं, तो दान इनके विकास में मदद करता है।',
+    donors: 'दानदाता',
+    loading: 'लोड हो रहा है…',
+    failed: 'लोड नहीं हो सका। बाद में फिर कोशिश करें।',
   },
 }
 

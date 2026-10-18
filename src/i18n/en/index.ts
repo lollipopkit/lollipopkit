@@ -91,11 +91,22 @@ const en: BaseTranslation = {
     blog: 'Blog',
     status: 'Status',
     privacy: 'Privacy',
+    donate: 'Donate',
   },
   privacy: {
     title: 'Privacy Policy — lollipopkit',
     description:
       'How lollipopkit.com and lollipopkit\'s apps handle your data, including Google user data.',
+  },
+  donate: {
+    title: 'Donate — lollipopkit',
+    description: 'Support lollipopkit\'s open-source apps with a donation.',
+    heading: 'Donate',
+    intro:
+      'lollipopkit\'s apps and tools are free and open source. If they are useful to you, a donation helps fund their development.',
+    donors: 'Donors',
+    loading: 'Loading…',
+    failed: 'Could not load. Try again later.',
   },
 }
 

@@ -118,7 +118,11 @@ is private) and the CDN (https://cdn.lollipopkit.com, the old root page with the
 card. The owner chose not to link the LGBT+ Avatar Gen (https://tsag.lpkt.cn) or JWT
 (https://jwt.lpkt.cn) sites that the current root page lists.
 
-The old download paths, `/serverbox`, `/gptbox`, `/donate`, redirect to the CDN (see below).
+The old download paths, `/serverbox` and `/gptbox`, redirect to the CDN (see below).
+
+`donate.html` (served at `/donate`) replaces the CDN's donate page. It reads the payment
+links (`link.json`) and the donor list (`data.json`) from `https://cdn.lollipopkit.com/donate/`
+at runtime (`src/lib/donate.ts`), so those two files stay the one place to edit them.
 
 To confirm with the owner before listing: `ipgeo.lollipopkit.com` (the ipgeo-shards data,
 Pages project `ipgeo-shards`), `sbmd.lollipopkit.com` (the ServerBox Monitor web panel,
@@ -130,7 +134,8 @@ Target: `lollipopkit.com` (root).
 
 The root used to be a proxied CNAME to `cdn.lolli.tech`, an nginx server that also served
 `/serverbox/`, `/gptbox/` and `/donate/` (download files). Those files are also on
-`cdn.lollipopkit.com`, so `public/_redirects` sends the old paths there with a 301. The
+`cdn.lollipopkit.com`, so `public/_redirects` sends the old download paths there with a
+301; `/donate` is the site's own page. The
 old root page linked nothing else under `lollipopkit.com`, and no local repo references
 a bare `lollipopkit.com/<path>`.
 

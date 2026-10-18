@@ -87,11 +87,21 @@ const zhCN: Translation = {
     blog: '博客',
     status: '服务状态',
     privacy: '隐私政策',
+    donate: '捐赠',
   },
   privacy: {
     title: '隐私政策 — lollipopkit',
     description:
       'lollipopkit.com 及 lollipopkit 的应用如何处理你的数据，包括 Google 用户数据。',
+  },
+  donate: {
+    title: '捐赠 — lollipopkit',
+    description: '通过捐赠支持 lollipopkit 的开源应用。',
+    heading: '捐赠',
+    intro: 'lollipopkit 的应用和工具都免费开源。如果它们对你有用，捐赠可以支持后续开发。',
+    donors: '捐赠者',
+    loading: '加载中…',
+    failed: '加载失败，请稍后再试。',
   },
 }
 

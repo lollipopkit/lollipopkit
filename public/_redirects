@@ -4,5 +4,3 @@
 /serverbox/*  https://cdn.lollipopkit.com/serverbox/:splat  301
 /gptbox       https://cdn.lollipopkit.com/gptbox             301
 /gptbox/*     https://cdn.lollipopkit.com/gptbox/:splat     301
-/donate       https://cdn.lollipopkit.com/donate             301
-/donate/*     https://cdn.lollipopkit.com/donate/:splat     301

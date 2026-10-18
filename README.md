@@ -6,7 +6,7 @@
   <br/>
   ✉️ <a href="https://matrix.to/#/!fkiFgqgzKzTOqjLepT:matrix.org?via=matrix.org">Matrix</a> / <a href="https://t.me/lpktg">Telegram</a> / <a href="https://discord.gg/SsVNbRhK7w">Discord</a>
   <br/>
-  🎁 Donate <a href="https://cdn.lollipopkit.com/donate/">Ko-fi / 支付宝</a>
+  🎁 <a href="https://lollipopkit.com/donate">Donate</a>
 </div>
 
 <!-- projects:start -->
