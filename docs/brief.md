@@ -122,6 +122,8 @@ The old download paths, `/serverbox` and `/gptbox`, redirect to the CDN (see bel
 
 `donate.html` (served at `/donate`) replaces the CDN's donate page. The payment links and
 the donor list are in `src/lib/donate.ts`; a new donation goes at the end of the list.
+A zone Redirect Rule sends `cdn.lollipopkit.com/donate` and everything under it to
+`https://lollipopkit.com/donate` (301), so the apps' and READMEs' old links land here.
 
 To confirm with the owner before listing: `ipgeo.lollipopkit.com` (the ipgeo-shards data,
 Pages project `ipgeo-shards`), `sbmd.lollipopkit.com` (the ServerBox Monitor web panel,
