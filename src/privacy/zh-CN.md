@@ -1,6 +1,6 @@
 # 隐私政策
 
-生效日期：2026 年 10 月 4 日。本译文仅供参考，如有出入，以英文版为准。
+生效日期：2026 年 11 月 3 日。本译文仅供参考，如有出入，以英文版为准。
 
 本政策适用于 lollipopkit.com 网站及 lollipopkit 发布的应用。在[应用隐私政策](#app-privacy-policies)中列出的应用另有完整的隐私政策，就该应用而言，以其自身的政策为准。
 
@@ -14,7 +14,7 @@
 
 以下 lollipopkit 应用通过 Google API 访问 Google 用户数据：
 
-- **MFuse**（macOS）请求 `https://www.googleapis.com/auth/drive` 权限，用于在 Finder 中挂载你的 Google Drive，并读取你的 Google 账户名称和邮箱地址以标识连接。上述数据只在你的 Mac 上处理。详见 [MFuse 隐私政策](https://mfuse.lollipopkit.com/privacy.html)。
+- **MFuse**（macOS）请求 `https://www.googleapis.com/auth/drive` 权限，用于在 Finder 中挂载你的 Google Drive，并读取你的 Google 账户名称和邮箱地址以标识连接。上述数据只在你的 Mac 上处理，不会发送给 lollipopkit 或任何第三方；MFuse 不会基于这些数据生成聚合或匿名化数据。对 Google 的请求使用 HTTPS，OAuth token 存储在 macOS 钥匙串中，缓存的文件数据保存在 MFuse 本地的 App Group 容器中，直到你删除该连接。在挂载的文件夹中删除文件会将其从 Google Drive 中永久删除。详见 [MFuse 隐私政策](https://mfuse.lollipopkit.com/privacy.html)。
 
 对于上面列出的每个应用，lollipopkit：
 

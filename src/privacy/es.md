@@ -2,7 +2,7 @@
 
 # Política de privacidad
 
-Fecha de entrada en vigor: 4 de octubre de 2026. Esta traducción es solo informativa; en caso de discrepancia, prevalece la versión en inglés.
+Fecha de entrada en vigor: 3 de noviembre de 2026. Esta traducción es solo informativa; en caso de discrepancia, prevalece la versión en inglés.
 
 Esta política cubre el sitio web lollipopkit.com y las aplicaciones publicadas por lollipopkit. Una aplicación que tenga su propia política de privacidad, indicada en [Políticas de privacidad de las aplicaciones](#app-privacy-policies), se describe allí por completo; esa política prevalece para la aplicación.
 
@@ -16,7 +16,7 @@ Esta política cubre el sitio web lollipopkit.com y las aplicaciones publicadas 
 
 Las siguientes aplicaciones de lollipopkit acceden a datos de usuario de Google mediante las API de Google:
 
-- **MFuse** (macOS) solicita `https://www.googleapis.com/auth/drive` para montar tu Google Drive en Finder, y lee el nombre y la dirección de correo de tu cuenta de Google para identificar la conexión. Todos estos datos se procesan únicamente en tu Mac. Detalles: [política de privacidad de MFuse](https://mfuse.lollipopkit.com/privacy.html).
+- **MFuse** (macOS) solicita `https://www.googleapis.com/auth/drive` para montar tu Google Drive en Finder, y lee el nombre y la dirección de correo de tu cuenta de Google para identificar la conexión. Todos estos datos se procesan únicamente en tu Mac y nunca se envían a lollipopkit ni a terceros; MFuse no genera datos agregados ni anonimizados a partir de ellos. Las solicitudes a Google usan HTTPS, los tokens de OAuth se guardan en el llavero de macOS y los datos de archivos en caché permanecen en el contenedor App Group local de MFuse hasta que eliminas la conexión. Eliminar un archivo en la carpeta montada lo elimina de forma permanente de Google Drive. Detalles: [política de privacidad de MFuse](https://mfuse.lollipopkit.com/privacy.html).
 
 Para cada aplicación indicada arriba, lollipopkit:
 
