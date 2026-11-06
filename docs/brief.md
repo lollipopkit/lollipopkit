@@ -151,8 +151,8 @@ A Pages project cannot switch to another repo, so the move from the archived
 `www.lollipopkit.com` is a proxied CNAME that a zone Redirect Rule sends to
 `https://lollipopkit.com` (301, path and query kept); it is not a Pages domain, since the
 rule answers first and Pages' HTTP validation of it could never pass.
-Cloudflare credentials are keychain generic passwords `cloudflare-account-id` and
-`cloudflare-api-token`; pass them through env vars, never print them.
+Cloudflare credentials are in 1Password: the API Credential `Dev/cloudflare` (`credential`,
+`account-id`); pass them through env vars, never print them.
 
 ## Develop
 
